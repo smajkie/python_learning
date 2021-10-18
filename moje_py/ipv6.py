@@ -1,19 +1,14 @@
 def szostka(adres):
-    #inicjuje zmienne
+    # inicjuje zmienne
     nowy_adres = ''
-    lista=[]
-    colonolista = []
-    nowa_lista=[]
-    lista=adres.split(':')
+    lista = adres.split(':')
 
     print(*lista)
 
-    # zamine 0000 na 0000w
-    liczba_czworek = len(lista)
     max_czworki_zer = 1
     nasz_max = 1
 
-    for m in range(1,len(lista)):
+    for m in range(1, len(lista)):
         if lista[m-1] == '0000' and lista[m] == '0000':
             print(f'Czworka numer {m} jest 0000 i ma sasiada ktory tez jest 0000')
             max_czworki_zer += 1
@@ -29,7 +24,7 @@ def szostka(adres):
                 print(f'Nowy kandydat na maxa:{nasz_max}')
                 max_czworki_zer = 1
             else:
-                print (f'Liczba czworek {max_czworki_zer} mniejsza od obecnego max - reject')
+                print(f'Liczba czworek {max_czworki_zer} mniejsza od obecnego max - reject')
                 max_czworki_zer = 1
         elif lista[m-1] != '0000':
             print(f'Pomijam czworke numer: {m} bo nie jest czworka zer')
@@ -37,7 +32,7 @@ def szostka(adres):
 
     print(f'Obliczony max ciag czworek zer to {nasz_max}')
 
-    #zamien ciag 0000 na ::
+    # zamien ciag 0000 na ::
     do_skrocenia_poczatek = nasz_max*('0000' + ':')
     do_skrocenia_srodek = (':' + nasz_max*('0000' + ':'))
     do_skrocenia_koniec = nasz_max*(':' + '0000')
@@ -61,4 +56,6 @@ def szostka(adres):
     result = nowy_adres.replace(kasuj_zera_1, '0:')
     print(result)
 
-szostka('0000:2200:0:0000:0000:0000:asdd:0000:0000:0000:0000')
+if __name__ == "__main__":
+    szostka('0000:2200:0:0000:0000:0000:asdd:0000:0000:0000:0000')
+
