@@ -18,5 +18,5 @@ def anagram(slowo):
 if anagram(input('Podaj')):
     print(f'Tak  to anagram!!!')
 else:
-    print(f'Nieeeeeeee,  to nie jest anagram')
+    print(f'Slowo ktore podales {anagram}, to nie jest anagram')
 
