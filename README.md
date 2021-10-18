@@ -1,0 +1,3 @@
+# mojanauka
+Python learning
+asdasdasd
