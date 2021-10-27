@@ -56,6 +56,6 @@ def szostka(adres):
     result = nowy_adres.replace(kasuj_zera_1, '0:')
     print(result)
 
-if __name__ == "__main__":
-    szostka('0000:2200:0:0000:0000:0000:asdd:0000:0000:0000:0000')
+#if __name__ == "__main__":
+ #   szostka('0000:2200:0:0000:0000:0000:asdd:0000:0000:0000:0000')
 

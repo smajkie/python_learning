@@ -15,6 +15,8 @@ def anagram(slowo):
         return False
 
 #input = input('Podaj slowo:')
+
+
 if anagram(input('Podaj')):
     print(f'Tak  to anagram!!!')
 else:
