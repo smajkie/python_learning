@@ -6,4 +6,4 @@ def main():
 def message():
     print(f'This platform runs {platform.processor()} system with release  on processor ')
 
-#if __name__ == '__main__': main()
+if __name__ == '__main__': main()
