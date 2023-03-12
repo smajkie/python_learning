@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: <may be some course, webpage etc>
+
+def main():
+    imie = input('Podaj imie: ')
+    wiek = input('Podaj wiek: ')
+    print(f'DObrze Cie widziec {imie}! Masz juz {wiek} lat')
+    print(type(imie), type(wiek))
+    #Jak widac input lyka wszystko jako stringi, jesli chcesz aby to byl int to trzeba to sobie przeksztalcic za pomoca funkcji int
+    wiek = int(wiek)
+    print(f'Dobrze Cie widziec {imie}! Masz juz {wiek+10} lat')     #i wtedy mozna juz robic operacje jak na int!
+    print(type(imie), type(wiek))
+
+if __name__ == '__main__': main()
