@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: <may be some course, webpage etc>
+
+def main():
+    x = 'Programowanie w języku Python - od A do Z'
+    x = x.lower().replace('ę', 'e').replace('-', '').replace(' ', '')
+    print(x)
+    x = set(x)
+    print(len(x))
+
+
+
+if __name__ == '__main__': main()

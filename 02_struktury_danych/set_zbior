@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: <may be some course, webpage etc>
+
+def main():
+    zbior = {'Ala', 'Misiu', 'Bubus'}          #set to zbior nieuporzadkowanych elementow
+    print(zbior)
+    print(type(zbior))
+    ##################
+    x = set('ssssadaddd')                      # funkcja set zbiera tylko unikalne iterowalne elementy
+    print(x)
+    y = 's' in x                               # czy s jest w zbioerze x? True or false
+    print(y)
+    ##################
+    print(dir(set))
+    zbior.add('Paulunda')
+    print(zbior)
+    zbior.remove('Bubus')
+    print(zbior)
+    
+
+
+
+if __name__ == '__main__': main()

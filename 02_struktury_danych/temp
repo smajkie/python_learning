@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: <may be some course, webpage etc>
+
+def main():
+    capitals = {'Polska': 'Warszawa', 'Niemcy': 'Berlin', 'Czechy': 'Praga'}
+    capitals['Wlochy'] = 'Rzym'
+    print(sorted(list(capitals.values())))
+    
+if __name__ == '__main__': main()

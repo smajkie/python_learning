@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: <may be some course, webpage etc>
+
+def main():             
+   krotka = ('Amazon', 'Intel', '191', 'True') 
+   tupla = 1, 'dwa', 3, 'cztery'                        # mozna nawet tak bez nawiasow!
+   gniazdko = (krotka, tupla)
+   print(krotka[0])
+   # krotka[1] = 'asasd'                                # tupla jest immutable co oznacza ze elementow w niej nie mozna zmieniac
+   print(gniazdko[0])
+   print(type(gniazdko))
+   imie, nazwisko = ('Sebus', 'Maj')                    # wygodne uzycie tupli do przypisania wielu zmiennych
+   firma1, firma2, rok, bool = krotka                   # mozna w druga strone, do zmiennych walic od razu tuple
+   print(firma1)
+   #########################
+   x, y = 10, 15                                        # fajna sztuczka z szybką zamianą zmiennych
+   x, y = y, x
+   print(x, y)
+
+
+if __name__ == '__main__': main()
