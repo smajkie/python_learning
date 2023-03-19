@@ -1,0 +1,33 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: <may be some course, webpage etc>
+
+#NOTATKI
+#Klucze nie moga sie w slowniku powtarzac, zawsze jedna wartosc dla jednego klucza
+#Porzadek nie jest trzymany i nie ma znaczenia
+
+def main():                                         
+    lang = {'jeden' : 'one', 'dwa' : 'two', 'trzy' : 'three'}
+    print(lang)
+    lang['cztery'] = 'four'
+    print(lang)
+    #lang.copy()
+    #lang.clear()
+    print(lang.keys())                                      #zwraca liste kluzy
+    a = list(lang.keys())                                   #no to wrzutka kluczy do prawdziwej listy
+    print(a)
+    print(lang.values())                                    #to samo dla wartosci 
+    print(lang.items())                                     #printuje liste tupli a poniewaz lista jest mutable a tupla nie to znaczy ze nie zmienimy wartosci pary klucz:wartosc (bo tupla)
+    b = list(lang.items())                                  #ale zmienimy element listy czyli calą pare klucz:wartosc
+    print(b)
+    print(lang['trzy'])                                     #najprostszy print wartosci dla klucza
+    print(lang.get('zero', 'Nie ma!'))                      #get tez printuje ale mozna podac co ma wyswietlic jak nie znajdzie
+    lang.pop('dwa')                                         #tutaj chce argumaent wiec nie mozna bezargumentowo usunac ostatniego elementu, poza tym slowniki sa przeciez nieuporzadkowane
+    print(lang)
+    lang.popitem()                                          #usuwa ostatnio dodany element, przed pythonem 3.7 randomowy element
+    print(lang)
+    lang.update({'jeden' : 1})                              #uaktualnia wartosc dla klucza
+    print(lang)
+
+if __name__ == '__main__': main()

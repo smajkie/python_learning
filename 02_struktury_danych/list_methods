@@ -1,0 +1,33 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: <may be some course, webpage etc>
+
+def main():
+    lista = []
+    lista.append('cos')                     #wstawia na koniec, append bierze tylko 1
+    print(lista)
+    #lista.append('a', 'b')                 #error TypeError: list.append() takes exactly one argument (2 given)
+    lista.append(['a', 'b'])                #to lepiej lae ono nie dostawi dwoh argumentow tylko 1 w postaci listy, jak dostawic2 wiec? 
+    print(lista)
+    #lista.extend('a', 'b')                 #extedn tez chce 1 arg
+    lista.extend(['a', 'b'])
+    print(lista)
+    lista.insert(0, 'jestem_pierwszy')      #insert dostawia na danym miejscu element
+    print(lista)
+    print(lista.pop())                      #pop bez argumentu usuwa ostatni element z listy
+    print(lista)
+    print(lista.pop(1))                     #oczywiscie z argumentem wskazujacym na id wyrzuca ten element
+    print(lista)
+    print(lista.count('a'))                 #ale nie przejdzie przez zagniezdzone wystepowania tego
+    #print(lista.sort())                    #nie umie sortowac roznych typow danych oczywiscie
+    lista.pop(1)
+    lista.extend(['c', 'aaa']*2)
+    print(lista)
+    print(sorted(lista))                    #list.sort method sorts the list in place and returns None. If you want to return the sorted list use sorted method.
+
+ 
+
+
+
+if __name__ == '__main__': main()
