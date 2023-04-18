@@ -1,0 +1,29 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: <https://intel.udemy.com/course/programowanie-w-jezyku-python-od-a-do-z-cwiczenia/learn/quiz/5848768#overview>
+
+def main():
+    experiment_name = 'The Effects of Temperature on Enzyme Activity'
+    treatment_group = 'Group A'
+    enzyme_activity = 12.3456
+
+    print(f'Welcome to {experiment_name}!\n', f'The {treatment_group} enzyme activity level is {round(enzyme_activity,2)} units.', sep='')
+
+
+
+if __name__ == '__main__': main()
+
+# inne rozwiazanie
+
+experiment_name = 'The Effects of Temperature on Enzyme Activity'
+treatment_group = 'Group A'
+enzyme_activity = 12.3456
+
+message = (
+    f'Welcome to {experiment_name}!\n'
+    f'The {treatment_group} enzyme activity level is '
+    f'{enzyme_activity:.2f} units.'
+)
+ 
+print(message)

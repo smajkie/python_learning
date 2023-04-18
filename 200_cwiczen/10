@@ -8,10 +8,10 @@ def main():
     item_name = 'Running shoes'
     item_price = 100.00
     item_discount = 0.30
-    print('Welcome to {}! \n\n'.format(store_name), 50*'-', '\nToday\'s special is the {}, which normally costs ${:.2f}\n\n'
+    print('Welcome to {}!\n'.format(store_name), 50*'-', '\nToday\'s special is the {}, which normally costs ${:.2f}\n'
           .format(item_name, item_price), 'But for a limited time, you can get it for ${:.2f} ({:.0%} off)!'
           .format(item_price-(item_price*item_discount),item_discount),sep="")
     #print('Welcome to {} \n','50*'-'','Today\'s special is the {}, which normally costs {}.'.format(store_name, item_name, item_price))
-    print('{0:.2f}'.format(item_price))
+    #print('{0:.2f}'.format(item_price))
 
 if __name__ == '__main__': main()

@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: <https://intel.udemy.com/course/programowanie-w-jezyku-python-od-a-do-z-cwiczenia/learn/quiz/5848768#overview>
+
+def main():
+    brand = "Ford"
+    model = "Mustang"
+    year = 2021
+    color = "Red"
+    mileage = 5000
+    print('CAR DETAILS\n', f'Make: {brand}\n', f'Model: {model}\n',f'Year: {year}\n',f'Color: {color}\n',f'Mileage: {mileage} miles', sep='')
+
+
+
+
+if __name__ == '__main__': main()
