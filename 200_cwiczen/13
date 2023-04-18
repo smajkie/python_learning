@@ -4,8 +4,13 @@
 #Source: <https://intel.udemy.com/course/programowanie-w-jezyku-python-od-a-do-z-cwiczenia/learn/quiz/5848768#overview>
 
 def main():
-    print('hello')
 
+    fruit1 = 'apple'
+    fruit2 = 'banana'
+    fruit3 = 'cherry'
+    
+    print(fruit1, fruit2, fruit3, sep=',', end=',...\n')
+    print(fruit1, fruit2, fruit3, sep='-', end='-...\n')
 
 
 if __name__ == '__main__': main()
