@@ -1,0 +1,18 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+def main():
+    x = 'ma'.join(['Ala', 'kota'])
+    print(x)
+    x = '#'.join(['Sport', 'TV', 'cos'])
+    print(x)
+    x = x.replace('#', '-')
+    print(x)
+    x = x.strip()                           # strip usuwa tylko spacje (wszystkie) rstrip po prawej lstrip po lewej
+    print(x)
+    y = '1,2,3,4,5'.split(',')              # dzieli znakiem i wrzuca do listy
+    print(type(y))
+
+if __name__ == '__main__': main()
