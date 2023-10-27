@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: <https://intel.udemy.com/course/programowanie-w-jezyku-python-od-a-do-z-cwiczenia/learn/quiz/5848768#overview>
+
+def main():
+    print('hello')
+
+
+
+if __name__ == '__main__': main()

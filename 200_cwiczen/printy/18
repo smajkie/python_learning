@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: <https://intel.udemy.com/course/programowanie-w-jezyku-python-od-a-do-z-cwiczenia/learn/quiz/5848768#overview>
+
+def main():
+    print(50*'=' + '\n> Main Menu\n' +50*'=')
+    print('\t 1. View all products')
+    print('\t 2. Search for a product')
+    print('\t 3. Add a new product')
+    print('\t 5. Delete a product')
+    print('\t 7. Checkout')
+    print('\t 8. Exit')    
+    
+    
+    
+    
+    
+
+
+
+if __name__ == '__main__': main()

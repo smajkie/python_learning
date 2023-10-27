@@ -1,0 +1,12 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: <https://intel.udemy.com/course/programowanie-w-jezyku-python-od-a-do-z-cwiczenia/learn/quiz/5848768#overview>
+
+def main():
+    input_text = 'PKV-89415-PLN'
+    print(f'The extracted code {input_text} is: {input_text[:3]+input_text[-3:]}')
+
+
+
+if __name__ == '__main__': main()

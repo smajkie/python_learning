@@ -4,7 +4,8 @@
 #Source: <may be some course, webpage etc>
 
 def main():
-    x = '123,785,45,5'
-    print(f'', {x.split(',')})
+    print(40*'=','\nautor: jannowak@poczta.com\n','data: 01-01-2021\n',40*'=',sep="")
+
+   
     
 if __name__ == '__main__': main()
