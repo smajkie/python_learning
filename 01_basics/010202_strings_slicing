@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # Copyright SMAJKO
+# Source: Combined sources
 
 def main():
     x = 'Alekmakota'

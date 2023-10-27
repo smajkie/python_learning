@@ -4,8 +4,11 @@
 #Source: <may be some course, webpage etc>
 
 def main():
-    capitals = {'Polska': 'Warszawa', 'Niemcy': 'Berlin', 'Czechy': 'Praga'}
-    capitals['Wlochy'] = 'Rzym'
-    print(sorted(list(capitals.values())))
+    # Poniżej zdefiniowane jest przybliżenie liczby pi
+    pi = 3.1415926535
+
+    # Używając formatowania f-string wydrukuj przybliżenie liczby pi
+    # do drugiego miejsca po przecinku
+    print(f'Przybliżenie liczby pi: {pi:.1}')
     
 if __name__ == '__main__': main()
