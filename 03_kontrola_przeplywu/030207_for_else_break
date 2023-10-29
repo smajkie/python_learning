@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+def main():
+    # list of fruits
+    my_list = ["papaya","banana","pineapple","mango","grapes"]
+    # iterating through the fruit list
+    for i in my_list:
+        if i=="mango":
+            print("mango found!")
+            break
+#        else:                                                       to jest bez sensu bo printuje za kazda iteracja
+#            print("mango not found! (inside for loop)")             
+
+    else:
+        print("mango not found! (as 'else' in 'for' loop)")
+
+
+
+if __name__ == '__main__': main()

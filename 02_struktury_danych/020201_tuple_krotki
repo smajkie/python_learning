@@ -4,7 +4,8 @@
 #Source: <may be some course, webpage etc>
 
 def main():             
-   krotka = ('Amazon', 'Intel', '191', 'True') 
+   krotka = ('Amazon', 'Intel', '191', 'True')          # tupla definition - if you want the data in your collection to be read-only, 
+                                                        # never to change, and always remain the same and constant
    tupla = 1, 'dwa', 3, 'cztery'                        # mozna nawet tak bez nawiasow!
    gniazdko = (krotka, tupla)
    print(krotka[0])

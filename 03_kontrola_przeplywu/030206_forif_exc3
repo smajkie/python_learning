@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+def main():
+    wynik = 0
+    x = int(input('Podaj liczbe: '))
+    for i in range(x+1):
+        wynik += i
+    print(wynik)
+
+if __name__ == '__main__': main()

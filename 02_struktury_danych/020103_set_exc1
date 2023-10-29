@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: <may be some course, webpage etc>
+
+def main():
+    zbior1 = {'Ala', 'Misiu', 'Bubus'}
+    zbior2 = {'jeden', 'dwa', 'trzy', 'Misiu'}
+    zbior = zbior1 | zbior2
+    print(zbior)
+    zbior = zbior1 - zbior2
+    print(zbior)
+    print(zbior1.intersection(zbior2))
+
+
+
+if __name__ == '__main__': main()

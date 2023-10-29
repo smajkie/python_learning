@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/37146432#overview
+
+def main():
+    password = input('Podaj haslo: ')
+ 
+    if len(password) < 8:
+        print('The password is too short.')
+    elif not any(char.isdigit() for char in password):
+        print('The password must contain at least one digit.')
+    elif not any(char.isupper() for char in password):
+        print('The password must contain at least one uppercase letter.')
+    elif not any(char.islower() for char in password):
+        print('The password must contain at least one lowercase letter.')
+    else:
+        print('The password is complex enough.')
+
+
+if __name__ == '__main__': main()
