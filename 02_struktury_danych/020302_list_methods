@@ -1,0 +1,46 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: <may be some course, webpage etc>
+"""
+Najwazniejsze metody:
+append()	Adds an element at the end of the list
+clear()	Removes all the elements from the list
+copy()	Returns a copy of the list
+count()	Returns the number of elements with the specified value
+extend()	Add the elements of a list (or any iterable), to the end of the current list
+index()	Returns the index of the first element with the specified value
+insert()	Adds an element at the specified position
+pop()	Removes the element at the specified position
+remove()	Removes the first item with the specified value
+reverse()	Reverses the order of the list
+sort()	Sorts the list """
+
+def main():
+    lista = []
+    lista.append('cos')                     #wstawia na koniec, append bierze tylko 1
+    print(lista)
+    #lista.append('a', 'b')                 #error TypeError: list.append() takes exactly one argument (2 given)
+    lista.append(['a', 'b'])                #to lepiej lae ono nie dostawi dwoch argumentow tylko 1 w postaci listy, jak dostawic2 wiec? 
+    print(lista)
+    #lista.extend('a', 'b')                 #extedn tez chce 1 arg
+    lista.extend(['a', 'b'])
+    print(lista)
+    lista.insert(0, 'jestem_pierwszy')      #insert dostawia na danym miejscu element
+    print(lista)
+    print(lista.pop())                      #pop bez argumentu usuwa ostatni element z listy
+    print(lista)
+    print(lista.pop(1))                     #oczywiscie z argumentem wskazujacym na id wyrzuca ten element
+    print(lista)
+    print(lista.count('a'))                 #ale nie przejdzie przez zagniezdzone wystepowania tego
+    #print(lista.sort())                    #nie umie sortowac roznych typow danych oczywiscie
+    lista.pop(1)
+    lista.extend(['c', 'aaa']*2)
+    print(lista)
+    print(sorted(lista))                    #list.sort method sorts the list in place and returns None. If you want to return the sorted list use sorted method.
+
+ 
+
+
+
+if __name__ == '__main__': main()
