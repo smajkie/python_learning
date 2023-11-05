@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+def writefile1():
+    techs = ['python', 'java', 'sql', 'r', 'scala']
+    FILE = 'C:\\github\\python_learning\\04_operacje_pliki\\zapis.txt'
+    with open(FILE, 'w') as file:
+        for tech in techs:
+            print(tech, file=file)
+
+def writefile2():
+    FILE2 = 'C:\\github\\python_learning\\04_operacje_pliki\\zapis2.txt'
+    parzysciaki = list(range(100)[::2])
+    with open(FILE2, 'w') as file:
+        for parzysciak in parzysciaki:
+            file.write(str(parzysciak) + '\n')              # tutaj write wymaga stringa, a tak zeby nie bylo wszystko w 1 lini to jeszcze \n
+
+def main():
+    writefile1()
+    writefile2()
+
+if __name__ == '__main__': main()

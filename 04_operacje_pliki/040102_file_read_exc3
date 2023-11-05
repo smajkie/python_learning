@@ -1,0 +1,36 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+'''Podany jest plik tekstowy zawierający dane pomiarowe z elektrowni wiatrowej (plik data.txt):
+
+2023-03-31 12:00:00,2.3
+2023-03-31 12:01:00,3.1
+2023-03-31 12:02:00,2.7
+
+Napisz program, który wczytuje ten plik tekstowy, przetwarza te dane i oblicza całkowitą energię wygenerowaną przez elektrownię wiatrową (druga kolumna
+ pliku, energia wyrażona w MW). Wynik wydrukuj do konsoli tak jak pokazano poniżej.
+
+Oczekiwany wynik:
+
+Total power generated: 8.10 MW
+'''
+
+def main():
+    suma_zuzycia = 0
+    FILE = 'C:\\github\\python_learning\\04_operacje_pliki\\data2.txt'
+    with open(FILE, 'r') as file:
+        for line in file:
+            data, prad = line.rstrip().split(',')
+            suma_zuzycia += float(prad)
+        print(f'Total power generated: {suma_zuzycia:.2f} MW')
+
+''' W oryginale takie rowiazanie:
+for line in lines:
+    if line:
+        power = float(line.split(',')[1])
+        total_power += power
+'''
+
+
+if __name__ == '__main__': main()

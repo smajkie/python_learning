@@ -1,0 +1,44 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+'''
+Podany jest poniższy słownik zawierający dane giełdowe:
+
+stock_data = {
+    'AAPL': 145.9,
+    'GOOG': 2680.7,
+    'TSLA': 712.6,
+    'AMZN': 3379.1
+}
+Zapisz te dane do pliku tekstowego stock_prices.txt. Każdą spółkę zapisz jako wiersz, który składa się z nazwy spółki i ceny akcji, 
+oddzielonych średnikiem. Każdy wiersz zakończ znakiem nowej linii \n.
+Zawartość pliku stock_prices.txt po zapisaniu danych:
+
+AAPL;145.9
+GOOG;2680.7
+TSLA;712.6
+AMZN;3379.1'''
+
+def main():
+    stock_data = {
+        'AAPL': 145.9,
+        'GOOG': 2680.7,
+        'TSLA': 712.6,
+        'AMZN': 3379.1
+        }
+
+    FILE = 'C:\\github\\python_learning\\04_operacje_pliki\\stock_prices.txt'
+
+    with open(FILE, 'w') as file:
+        for a in stock_data.items():            # tupla z wartosciami
+            print(a[0],a[1], sep=';', file=file)
+
+'''Sugerowane rozwiazanie:
+with open('stock_prices.txt', 'w') as f:
+    for key, value in stock_data.items():
+        f.write(key + ';' + str(value) + '\n')'''
+
+
+
+if __name__ == '__main__': main()

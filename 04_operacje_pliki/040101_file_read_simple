@@ -1,0 +1,73 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+''' Notatki: 
+Tryby odczytu plikow:
+'r' do odczytywania plików tekstowych. Pliki odczytywane w trybie "r" są otwierane w trybie tylko do odczytu, co oznacza, że nie można ich modyfikować.
+'rb' do odczytywania plików binarnych
+Podczas używania trybu odczytu ("r" lub "rb"), plik musi istnieć, w przeciwnym razie zostanie zgłoszony błąd FileNotFoundError. Jeśli plik nie istnieje
+i chcesz go utworzyć, możesz użyć trybu "w" (zapisu) w połączeniu z trybem "r" (odczytu), co pozwala na odczyt i ewentualne utworzenie pliku.
+'w': Otwiera plik do zapisu w trybie tekstowym. Jeśli plik istnieje, jego zawartość zostanie usunięta.
+'wb': Otwiera plik do zapisu w trybie binarnym. Podobnie jak w przypadku 'w', jeśli plik istnieje, jego zawartość zostanie usunięta.
+'a': Otwiera plik do dokładania (append) w trybie tekstowym. Jeżeli plik nie istnieje, zostanie stworzony.
+'ab': Otwiera plik do dokładania (append) w trybie binarnym. Jeżeli plik nie istnieje, zostanie stworzony.
+'r+' Tryb odczytu i zapisu 'r+': Ten tryb umożliwia odczyt i zapis danych do pliku. Plik jest otwierany w trybie aktualizacji, 
+a wskaźnik jest ustawiany na początku pliku. '''
+
+FILE = 'C:\\github\\python_learning\\04_operacje_pliki\\simple.txt'
+
+def readfile1():
+    file = open(FILE, 'r')
+    for line in file:
+        print(line, end='')                               # bez tego 'enda' bylaby linijka przerwy miedzy kazda linia bo chyba domyslny jest \n
+    file.close                                            # koniecznosc
+    print('\n','#'*30,'End of fun1')
+
+def readfile2():                                          # bardziej elegancko niz #1
+    with open(FILE, 'r') as file:                         # Otwarcie pliku za pomocą with jest zalecane, ponieważ 
+        for line in file:                                 # automatycznie zamknie plik po opuszczeniu bloku kodu
+            print(line, end='')
+    #file.close 
+    print('\n','#'*30,'End of fun2')
+
+def readfile3():                                          # wykorzystujac readline(s)
+    with open(FILE, 'r') as file:
+        line = file.readline()
+        #file.seek(0)
+        lines = file.readlines()            # pointer juz zreadlineowal pierwsza linie wiec do listy trafia tylko 2, chyba ze sie go zrestaruje przez seek
+        print(line,lines)                   # domyslnie bedzie dostawial do listy znaki nastepnych lini
+        for linia in lines:
+            print(linia, end='')
+    print('\n','#'*30,'End of fun3')
+
+def readfile4():                            # jeszcze inny sposob wykorzystujacy while
+    with open(FILE, 'r') as file:
+        line = file.readline()
+        while line:
+            print(line, end='')
+            line = file.readline()
+    print('\n','#'*30,'End of fun4')
+
+def readfile5():                            # jeszcze inny sposob wykorzystujacy czytanie calego pliku 
+    with open(FILE, 'r') as file:
+        lines = file.read()
+        print(lines)
+    print('\n','#'*30,'End of fun5')
+
+def readfile6():
+    lista = []
+    with open(FILE, 'r') as file:
+        for line in file:
+            lista.append(line[:-1])         # wrzuci do listy bez ostatniego znaku ktorym jest /n
+    print(lista)
+
+def main():
+    readfile1()
+    readfile2()
+    readfile3()
+    readfile4()
+    readfile5()
+    readfile6()
+
+if __name__ == '__main__': main()

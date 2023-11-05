@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+'''Odczytaj podany plik products.txt zawierający dane dotyczące produktów w sklepie internetowym. Pomiń pierwszą linię pliku zawierającą nagłówek pliku
+ i w postaci listy wydrukuj każdy kolejny wiersz pliku do konsoli tak jak pokazano poniżej.
+Oczekiwany wynik:
+
+['Printed T-shirt', '29.99', 'Classic white t-shirt with a printed design on the front']
+['Sweatpants', '49.99', 'Black sweatpants made from a soft material']
+['Evening Dress', '99.99', 'Elegant evening dress with a deep neckline']
+['Sport Shoes', '79.99', 'Lightweight sport shoes perfect for running.']'''
+
+def main():
+
+    FILE = 'C:\\github\\python_learning\\04_operacje_pliki\\products.txt'
+    with open(FILE, 'r') as file:
+        naglowek = file.readline()                          # pozbywam sie pierwszej lini, ladniej mozna tez tak
+        kontent = file.readlines()
+        # kontent = kontent[1:]                             # jak tu
+        lista = []                                          # bedzie lista list
+        for line in kontent:
+            linijka = line.rstrip().split(';')              # to funkcja split zwraca liste ktora sobie bierzemy jako liste do linijki
+            #print(linijka)
+            lista.append(linijka)
+    #print(lista)
+    for product in lista:
+        print(product)
+
+if __name__ == '__main__': main()
