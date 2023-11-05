@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+def main():
+    products = [
+    {'name': 'T-shirt', 'price': 29.99},
+    {'name': 'Shoes', 'price': 99.99},
+    {'name': 'Pants', 'price': 49.99},
+    ]
+
+    FILE = 'C:\\github\\python_learning\\04_operacje_pliki\\cw1.txt'
+
+    with open(FILE, 'w') as file:
+        for line in products:
+            print(line['name'],',',line['price'],sep='', file=file)
+
+
+
+if __name__ == '__main__': main()

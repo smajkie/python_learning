@@ -5,6 +5,8 @@
 
 def main():
     lista = [1, 'cos', 2, 'egh', 4.5, True]             #milo ze mozna mieszac wszelakie typy danych
+    print(lista)
+    print(*lista)                                       #printuje w jendnej linijce zawarotsc listy
     lista2 = ['ala', 'ma', 'kota']
     for i in lista:
         print(type(i))

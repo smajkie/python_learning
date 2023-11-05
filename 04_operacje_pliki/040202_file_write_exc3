@@ -1,0 +1,57 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+'''
+Podane są poniższe informacje medyczne pacjenta:
+
+first_name = 'Jan'
+last_name = 'Kowalski'
+weight = 75.5
+height = 1.85
+date_of_birth = '1990-01-01'
+chronic_conditions = ['hypertension', 'diabetes']
+medications = {
+    'hypertension_medications': ['enalapril', 'hydrochlorothiazide'],
+    'diabetes_medications': ['metformin'],
+}
+
+Za pomocą metody write() zapisz powyższe dane pacjenta do pliku o nazwie patient_data.txt tak jak pokazano poniżej:
+
+First name: Jan
+Last name: Kowalski
+Weight: 75.5 kg
+Height: 1.85 m
+Date of birth: 1990-01-01
+Chronic conditions: hypertension, diabetes
+Hypertension medications: enalapril, hydrochlorothiazide
+Diabetes medications: metformin
+ 
+'''
+
+def main():
+    first_name = 'Jan'
+    last_name = 'Kowalski'
+    weight = 75.5
+    height = 1.85
+    date_of_birth = '1990-01-01'
+    chronic_conditions = ['hypertension', 'diabetes']
+    medications = {
+        'hypertension_medications': ['enalapril', 'hydrochlorothiazide'],
+        'diabetes_medications': ['metformin'],
+    }
+
+    FILE = 'C:\\github\\python_learning\\04_operacje_pliki\\patient_data.txt'
+
+    with open(FILE, 'w') as file:
+        file.write(f'First name: {first_name}'+'\n')
+        file.write(f'Last name: {last_name}'+'\n')
+        file.write(f'Weight: {str(weight)}'+'\n')
+        file.write(f'Height: {str(height)}'+'\n')
+        file.write(f'Date of birth: {date_of_birth}'+'\n')
+        file.write('Chronic conditions: {}\n'.format(', '.join(chronic_conditions)))              # join laczy elementy listy z danym separatorem w jedno
+        for choroby in chronic_conditions:
+            file.write('{} medications: {} \n'.format(choroby.capitalize(),', '.join(medications[choroby+'_medications'])))
+
+
+if __name__ == '__main__': main()
