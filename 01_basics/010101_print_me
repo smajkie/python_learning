@@ -2,6 +2,14 @@
 # Copyright SMAJKO
 
 #Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+'''print(expr1, expr2, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
+sep: Jest to opcjonalny argument, który określa, jakie znaki lub napisy zostaną użyte jako separator między wyrażeniami. Domyślnie jest
+to spacja.
+end: Jest to opcjonalny argument, który określa, co zostanie dodane na końcu wyprowadzanych danych. Domyślnie jest to nowa linia 
+("\n"), co oznacza, że każde wywołanie print() automatycznie przechodzi do nowej linii. Można to zmienić, aby zachować dane w tej samej
+linii lub użyć innego znaku jako zakończenia.
+file: Jest to opcjonalny argument, który pozwala na określenie, do którego strumienia wyjściowego zostaną przekierowane dane. Domyślnie
+jest to sys.stdout, czyli standardowe wyjście konsoli. Można to zmienić, aby przekierować dane do innego pliku lub strumienia.'''
 
 import platform
 
@@ -27,6 +35,5 @@ def main():
     print('This platform runs {} system with release {} on processor {}'.format(platform.system(), platform.release(), platform.processor()))
     # albo2
     print('This platform runs {2} system with release {0} on processor {1}'.format(platform.system(), platform.release(), platform.processor()))
-
 
 if __name__ == '__main__': main()

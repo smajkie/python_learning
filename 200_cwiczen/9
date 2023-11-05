@@ -4,10 +4,10 @@
 #Source: <https://intel.udemy.com/course/programowanie-w-jezyku-python-od-a-do-z-cwiczenia/learn/quiz/5848768#overview>
 
 def main():
-    pi = 3.14
-    r = 5
-    print(f'The area of the circle is: {pi*r**2} cm2')
+    print(40*'=','\nautor: jannowak@poczta.com\n','data: 01-01-2021\n',40*'=',sep="")
 
-
-
+   
+    
 if __name__ == '__main__': main()
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: <may be some course, webpage etc>
+
+def main():
+    parts = [
+    ['50x20x1.5', '25x10x1.0'],
+    ['55x22x1.8', '30x15x1.2'],
+    ['60x24x2.0', '35x20x1.5'],
+    ]
+
+    print('length: {}\nwidth: {}\nheight: {}\n'.format(float(parts[1][0][:2]), float(parts[1][0][3:5]), float(parts[1][0][-3:])))
+
+   
+    
+if __name__ == '__main__': main()
