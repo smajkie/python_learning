@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # Copyright SMAJKO
 
-#Source: <may be some course, webpage etc>
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python-od-a-do-z-cwiczenia/learn/lecture/40604920#overview
 """
 Najwazniejsze metody:
 append()	Adds an element at the end of the list
@@ -18,10 +18,10 @@ sort()	Sorts the list """
 
 def main():
     lista = []
-    lista.append('cos')                     #wstawia na koniec, append bierze tylko 1
+    lista.append('cos')                     #wstawia na koniec, append bierze tylko 1 arg
     print(lista)
     #lista.append('a', 'b')                 #error TypeError: list.append() takes exactly one argument (2 given)
-    lista.append(['a', 'b'])                #to lepiej lae ono nie dostawi dwoch argumentow tylko 1 w postaci listy, jak dostawic2 wiec? 
+    lista.append(['a', 'b'])                #to lepiej ale ono nie dostawi dwoch argumentow tylko 1 w postaci listy, jak dostawic2 wiec? 
     print(lista)
     #lista.extend('a', 'b')                 #extedn tez chce 1 arg
     lista.extend(['a', 'b'])
@@ -38,8 +38,22 @@ def main():
     lista.extend(['c', 'aaa']*2)
     print(lista)
     print(sorted(lista))                    #list.sort method sorts the list in place and returns None. If you want to return the sorted list use sorted method.
+    lista = [1, 'cos', 2, 'egh', 4.5, True]             #milo ze mozna mieszac wszelakie typy danych
+    print(lista)
+    print(*lista)                                       #printuje w jendnej linijce zawarotsc listy
+    lista2 = ['ala', 'ma', 'kota']
+    for i in lista:
+        print(type(i))
+    polaczone = lista + lista2
+    print(polaczone)
+    gniazdko = [lista, lista2]
+    print(gniazdko)
+    gniazdko += 'a ja nie jestem lista'                 # dodaj kazdy znak jako element listy
+    print(gniazdko)
+    gniazdko += ['a ja jestem?']
+    gniazdko += ['ffff', 'eggee']
+    print(gniazdko)
 
- 
 
 
 

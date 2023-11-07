@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+'''
+Podana jest poniższa krotka:
+
+info = (('Monika', 19), ('Tomek', 21), ('Adam', 18), ('Jarek', 30))
+
+Posortuj ten obiekt (rosnąco oraz malejąco) po drugim elemencie (wiek) każdego zagnieżdżonego obiektu tuple. Wynik wydrukuj do konsoli
+tak jak pokazano poniżej.
+
+Oczekiwany wynik:
+
+Ascending: (('Adam', 18), ('Monika', 19), ('Tomek', 21), ('Jarek', 30))
+Descending: (('Jarek', 30), ('Tomek', 21), ('Monika', 19), ('Adam', 18))
+'''
+
+def main():
+    info = (('Monika', 19), ('Tomek', 21), ('Adam', 18), ('Jarek', 30))
+    
+    asc_info = tuple(sorted(info, key=lambda item: item[1]))
+    desc_info = tuple(sorted(info, key=lambda item: item[1], reverse=True))
+    
+    print(f'Ascending: {asc_info}')
+    print(f'Descending: {desc_info}')
+
+
+
+if __name__ == '__main__': main()

@@ -18,4 +18,5 @@ def main():
     print('///'*30)
     print(dir(STALA))
     help(str.find)              # Wbudowany help do metod obiektow itp
+    print(f'Stala is int: {isinstance(STALA, int)}')    # isinstance pokazuje czy dany obiekt jest danego typu
 if __name__ == '__main__': main()

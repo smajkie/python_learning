@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+def main():
+    filenames = ['view.jpg', 'bear.jpg', 'ball.png']
+    filenames.insert(0, 'aaa.jpg')
+    filenames.pop()
+    print(*filenames)
+
+    text = 'Open,High,Low,Close'
+    print(list(text.split(sep=',')))
+
+
+
+if __name__ == '__main__': main()
