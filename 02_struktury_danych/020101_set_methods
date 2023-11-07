@@ -3,26 +3,27 @@
 
 #Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
 """
-Najwazniejsze metody:
-add()	Adds an element to the set
-clear()	Removes all the elements from the set
-discard()	Remove the specified item
-intersection()	Returns a set, that is the intersection of two or more sets
-pop()	Removes an element from the set
-remove()	Removes the specified element
+add(element): Dodaje element do zbioru.
+remove(element): Usuwa element z zbioru. Generuje wyjątek, jeśli element nie istnieje.
+discard(element): Usuwa element z zbioru, jeśli istnieje, a w przeciwnym razie nie powoduje błędu.
+pop(): Usuwa i zwraca losowy element ze zbioru. Może być przydatny, gdy nie istnieje określony porządek w zbiorze.
+clear(): Usuwa wszystkie elementy ze zbioru.
+union(other_set): Zwraca nowy zbiór zawierający elementy z obecnego zbioru i innego zbioru.
+intersection(other_set): Zwraca nowy zbiór zawierający elementy wspólne obecnego zbioru i innego zbioru.
+difference(other_set): Zwraca nowy zbiór zawierający elementy, które występują w obecnym zbiorze, ale nie występują w innym zbiorze.
+symmetric_difference(other_set): Zwraca nowy zbiór zawierający elementy, które występują w jednym z dwóch zbiorów, ale nie w obu.
+issubset(other_set): Sprawdza, czy obecny zbiór jest podzbiorem innego zbioru.
+issuperset(other_set): Sprawdza, czy obecny zbiór jest nadzbiorem innego zbioru.
 """
 
-
-
-
 def main():
-    zbior = {'Ala', 'Misiu', 'Bubus'}          #set to zbior niepowtarzajacych sie, nieuporzadkowanych elementow
-    print(zbior)
+    zbior = {'Ala', 'Misiu', 'Bubus'}          # set to zbior niepowtarzajacych sie, nieuporzadkowanych elementow
+    print(zbior)                               # zbiory sa mutowalne czyli cih zawartosc moze byc zmieniuana po utworzeniu
     print(type(zbior))
     ##################
-    x = set('ssssadaddd')                      # funkcja set zbiera tylko unikalne iterowalne elementy
+    x = set('ssssadaddd')                      # funkcja set zbiera tylko unikalne iterowalne elementy i tworzy z nich zbior
     print(x)
-    y = 's' in x                               # czy s jest w zbioerze x? True or false
+    y = 's' in x                               # czy s jest w zbiorze x? True or false
     print(y)
     ##################
     print(dir(set))

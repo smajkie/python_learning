@@ -2,13 +2,18 @@
 # Copyright SMAJKO
 
 #Source: <may be some course, webpage etc>
+'''
+count()	Returns the number of times a specified value occurs in a tuple
+index()	Searches the tuple for a specified value and returns the position of where it was found
+'''
+
 
 def main():             
    krotka = ('Amazon', 'Intel', '191', 'True')          # tupla definition - if you want the data in your collection to be read-only, 
                                                         # never to change, and always remain the same and constant
    tupla = 1, 'dwa', 3, 'cztery'                        # mozna nawet tak bez nawiasow!
    gniazdko = (krotka, tupla)
-   print(krotka[0])
+   print(krotka[0])                                     # dostep do elemenow krotki
    # krotka[1] = 'asasd'                                # tupla jest immutable co oznacza ze elementow w niej nie mozna zmieniac
    print(gniazdko[0])
    print(type(gniazdko))

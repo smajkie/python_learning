@@ -3,6 +3,22 @@
 
 #Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
 
+'''
+upper(): Zamienia wszystkie litery w napisie na wielkie litery.
+lower(): Zamienia wszystkie litery w napisie na małe litery.
+strip(): Usuwa białe znaki (spacje, tabulatory, znaki nowej linii) z początku i końca napisu.
+split(): Dzieli napis na podciągi na podstawie określonego separatora i zwraca listę podciągów.
+join(): Łączy listę napisów w jeden napis, używając określonego separatora.
+replace(): Zamienia wszystkie wystąpienia określonego podciągu w napisie na inny podciąg.
+find(): Znajduje pierwsze wystąpienie określonego podciągu w napisie i zwraca indeks (lub -1, jeśli nie znaleziono).
+index(): Znajduje pierwsze wystąpienie określonego podciągu w napisie i zwraca indeks (ale generuje wyjątek ValueError, jeśli nie znaleziono).
+startswith(): Sprawdza, czy napis rozpoczyna się od określonego podciągu.
+endswith(): Sprawdza, czy napis kończy się określonym podciągiem.
+count(): Zlicza ilość wystąpień określonego podciągu w napisie.
+capitalize(): Zamienia pierwszą literę napisu na wielką, a pozostałe na małe.
+title(): Zamienia pierwsze litery wszystkich słów w napisie na wielkie.
+'''
+
 def main():
     x = 'ma'.join(['Ala', 'kota'])
     print(x)

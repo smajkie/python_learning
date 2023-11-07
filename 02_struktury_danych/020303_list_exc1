@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+'''
+Podana jest poniższa zmienna tekstowa:
+
+text = 'Programowanie w języku Python'
+
+Wykonaj poniższe kroki:
+dokonaj standaryzacji tekstu: zamień duże litery na małe, zastąp polskie znaki w następujący sposób: 'ę' -> 'e'
+utwórz listę składającą się z unikalnych znaków w tekście.
+usuń spację z tej listy
+posortuj listę od 'a' do 'z'.
+W odpowiedzi wydrukuj do konsoli 10 pierwszych elementów tej listy.
+Oczekiwany wynik:
+
+['a', 'e', 'g', 'h', 'i', 'j', 'k', 'm', 'n', 'o']'''
+
+def main():
+    text = 'Programowanie w języku Python'
+    x = list(set(text.lower().replace('ę','e')))
+    x.remove(' ')
+    x.sort()
+    print(x[:10])
+
+if __name__ == '__main__': main()

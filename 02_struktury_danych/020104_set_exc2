@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+'''
+Podana jest poniższa zmienna tekstowa:
+text = 'Programming in python.'
+Wykorzystując zmienną text wykonaj następujące kroki:
+Zamień wszystkie litery na małe.
+Usuń wszystkie spacje i kropkę.
+Utwórz zbiór składający się z pozostałych liter w tak przetworzonym tekście.
+Odpowiednią metodą dla zbiorów usuń z tego zbioru wszystkie samogłoski (zbiór vowels):
+
+vowels = {'a', 'e', 'i', 'o', 'u'}
+
+W odpowiedzi wydrukuj liczbę elementów w końcowym zbiorze (liczba spółgłosek w podanym tekście) tak jak pokazano poniżej.
+Oczekiwany wynik:
+Number of consonants: 8'''
+
+def main():
+    text = 'Programming in python.'
+    vowels = {'a', 'e', 'i', 'o', 'u'}
+    x = set(text.lower().replace(' ','').replace('.',''))
+    y = x.difference(vowels)
+    print(f"number of consonants: {len(y)}")
+
+if __name__ == '__main__': main()
