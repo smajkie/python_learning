@@ -1,0 +1,48 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+'''Napisz program, który z podanego tekstu:
+text = 'Python jest bardzo popularnym językiem programowania'
+wytnie dokładnie cztery pierwsze wyrazy. Przeprowadź standaryzację każdego wyrazu, tzn. zamień duże litery na małe. 
+Wynik przedstaw w postaci listy i wydrukuj do konsoli.'''
+
+def main():
+    text = 'Python jest bardzo popularnym językiem programowania'
+    lista = []
+    slowo = ''
+    licznik = 0
+    for litera in text:
+        if litera != ' ' and licznik <4:
+            slowo += litera
+        elif licznik >= 4:
+            break
+        else:
+            lista.append(slowo)
+            slowo = ''
+            licznik += 1
+    print(lista)
+
+'''Sugerowane eleganckie rozwiazanie:
+text = 'Python jest bardzo popularnym językiem programowania'
+words = text.split(' ')
+result = []
+ 
+for idx, word in enumerate(words):
+    if idx < 4:
+        result.append(word.lower())
+ 
+print(result)
+
+Jeszcze lepsze:
+
+text = 'Python jest bardzo popularnym językiem programowania'
+words = text.split(' ')
+result = [word.lower() for idx, word in enumerate(words) if idx < 4]
+print(result)
+'''
+
+
+
+
+if __name__ == '__main__': main()

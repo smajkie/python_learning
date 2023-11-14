@@ -4,17 +4,12 @@
 #Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
 
 def main():
-    fuel = 100
-    fuel_consumption_rate = 10
-    time = 0
-
-    while fuel > 0:
-        print('Fuel remaining units: ',fuel)
-        fuel -= fuel_consumption_rate
-        time += 1
-    else:
-        print('End of flight')
-
+    url = (
+    'https://e-smartdata.teachable.com/p/sciezka-data-scientist'
+    '-machine-learning-engineer'
+    )
+    lista = url.split('/')
+    print(lista[-1].replace('-',' '))
 
 
 if __name__ == '__main__': main()
