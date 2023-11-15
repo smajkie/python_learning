@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+'''
+Napisz funkcje sprawdzajaca w liscie slownikow czy istnieje dany klucz, wyprintuj jego nazwe
+
+'''
+def key_search_value (list, key):
+    for slownik in list:
+        for klucz in slownik:
+            if klucz == key:
+                print(slownik.setdefault(klucz))
+
+def main():
+    missions = [
+    {
+        'name': 'Apollo 11',
+        'date': '20.07.1969',
+        'status': 'completed',
+    },
+    {
+        'name': 'Mars Pathfinder',
+        'date': '04.07.1997',
+        'status': 'completed',
+    },
+    {
+        'name': 'Chang\'e 4',
+        'date': '03.01.2019',
+        'status': 'in progress',
+    },
+    {
+        'name': 'Cassini',
+        'date': '15.10.1997',
+        'status': 'completed',
+    },
+    ]
+
+    key_search_value(missions, 'name')
+
+
+
+
+
+if __name__ == '__main__': main()

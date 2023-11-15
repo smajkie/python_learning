@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+def main():
+    panels = [
+    {'id': 1, 'output_power': 200},
+    {'id': 2, 'output_power': 150},
+    {'id': 3, 'output_power': 250},
+    {'id': 4, 'output_power': 1820},
+]
+
+    for exceeded_power in panels:
+        if exceeded_power['output_power'] > 2002:
+            print('The first panel with an output power greater than 200 is: ', exceeded_power['id'])
+            break
+    else:
+        print('None of the panels exceeded target yet!')
+if __name__ == '__main__': main()

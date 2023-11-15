@@ -4,12 +4,32 @@
 #Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
 
 def main():
-    url = (
-    'https://e-smartdata.teachable.com/p/sciezka-data-scientist'
-    '-machine-learning-engineer'
-    )
-    lista = url.split('/')
-    print(lista[-1].replace('-',' '))
+    text = """Python - język programowania wysokiego poziomu ogólnego przeznaczenia, o rozbudowanym pakiecie bibliotek standardowych, którego ideą przewodnią jest czytelność i klarowność kodu źródłowego."""
+    lista = []
+    lista = text.split(' ')
+    for index, item in enumerate(lista):
+        #print(index, item)
+        lista[index] = item.lower()
+        lenx = len(item)
+        if item[-1] == ',' or item[-1] == '.':
+            lista[index] = item[:lenx-1]
+        print(index, item, lenx)
+    lista_finalowa = []    
+    for i in lista:
+        if len(i) > 10:
+            lista_finalowa.append(i)    #elif lenx >= 10:
+        #    print(index, item, lenx)
+         #   lista.remove(item)
+    print(lista_finalowa)
+
+'''Ja tu takie meczarnie a sugerowane rozwiazanie to:
+words = text.split()
+words = [
+    word.lower().replace('.', '').replace(',', '') for word in words
+]
+long_words = [word for word in words if len(word) > 10]
+ 
+print(long_words)'''
 
 
 if __name__ == '__main__': main()
