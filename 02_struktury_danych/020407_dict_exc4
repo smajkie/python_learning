@@ -1,0 +1,46 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+'''
+Załóżmy, że pracujesz nad projektem podróżniczym i chcesz śledzić szczegóły rezerwacji hotelu za pomocą słownika. Utwórz słownik o 
+nazwie hotel_booking zawierający następujące pary klucz-wartość:
+
+Następnie wykonaj poniższe kroki:
+
+dla klucza num_guests ustaw nową wartość 3
+dodaj nową parę 'price': 200
+usuń parę dla klucza 'room_type'
+wydrukuj liczbę elementów słownika hotel_booking
+wydrukuj posortowaną alfabetycznie listę kluczy słownika hotel_booking
+
+Oczekiwany wynik:
+
+5
+['check_in_date', 'check_out_date', 'hotel_name', 'num_guests', 'price']'''
+
+def main():
+    hotel_booking = {
+        'hotel_name': 'Sheraton',
+        'check_in_date': '2024-06-10',
+        'check_out_date': '2023-06-13',
+        'room_type': 'Deluxe',
+        'num_guests': 2
+    }
+
+    hotel_booking['num_guests'] = 3
+    hotel_booking['price'] = 200
+    hotel_booking.pop('room_type')
+    lista = list(hotel_booking.keys())
+    x = len(hotel_booking)
+    print(x)
+    print(sorted(lista))
+    #lista = lista.sort()
+    print(lista)
+
+
+    print(hotel_booking)
+
+
+
+if __name__ == '__main__': main()

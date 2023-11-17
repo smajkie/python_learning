@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/quiz/5843580#overview
+### Ćwiczenie 16
+#Podany jest ciąg znaków:
+#hashtags = '#weekend#good#time#'
+#Napisz program, który wydrukuje do konsoli wyciągnięte z tego tekstu słowa tak, aby każde słowo znajdowało się w osobnym wierszu.
+#Oczekiwany wynik:
+
+#weekend
+#good
+#time
+###
+
+def main():
+    slowo = ''
+    hashtags = '#weekend#good#time#'
+#    slowo = []
+    for char in hashtags:
+        if char != '#':
+            slowo = slowo + char
+        else:
+            print(slowo)
+            slowo = '' 
+
+
+if __name__ == '__main__': main()

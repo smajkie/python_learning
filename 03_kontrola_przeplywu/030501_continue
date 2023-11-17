@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+def main():
+    for i in range(20):
+        if i % 2 == 0:
+            continue            # powoduje ze parzysta liczba jest pomijana, continue powoduje kontynuowanie z nastepnymi iteracjami
+        print(i)
+
+
+
+if __name__ == '__main__': main()

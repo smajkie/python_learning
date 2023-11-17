@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+def main():
+    HASLO = '1234'
+    MAX_ATTEMPTS = 3
+    ATTEMPT = ''
+    while ATTEMPT != HASLO and MAX_ATTEMPTS > 0:
+        ATTEMPT = input("Podaj haslo, masz na to {} proby: ".format(MAX_ATTEMPTS))
+        MAX_ATTEMPTS -= 1
+        if ATTEMPT == HASLO:
+            print('Access granted!!!')
+            break
+        else:
+            print('Wrong password, remaining attempts: ',MAX_ATTEMPTS)
+    else:
+        print("All allowed auth attempts failed!!!")
+
+if __name__ == '__main__': main()

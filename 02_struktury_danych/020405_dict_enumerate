@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+def main():
+    ticker = [
+        'ALR', 'CCC', 'CDR', 'CPS', 'DNP',
+        'JSW', 'KGH', 'LPP', 'LTS', 'MBK',
+        'OPL', 'PEO', 'PGE', 'PGN', 'PKN',
+        'PKO', 'PLY', 'PZU', 'SPL', 'TPE'
+    ]
+
+    lista = dict(enumerate(ticker))
+    print(lista)
+
+if __name__ == '__main__': main()

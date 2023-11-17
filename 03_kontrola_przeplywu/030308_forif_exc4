@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+'''
+Napisz program, który znajdzie wszystkie liczby dwucyfrowe podzielne przez 11. Wynik wydrukuj do konsoli w postaci wartości 
+rozdzielonych przecinkiem.
+'''
+def main():
+    lista = []
+    for i in range(10,100):
+        if i % 11 == 0:
+            lista.append(i)
+    #wynik = ','.join(lista)             # join tutaj chce stringa dlatego trzeba te wartosci ustringowic
+    for i,j in enumerate(lista):
+        lista[i] = str(j)
+    wynik = ','.join(lista)
+    print(wynik)
+
+if __name__ == '__main__': main()

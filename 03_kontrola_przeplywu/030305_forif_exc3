@@ -4,8 +4,10 @@
 #Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
 
 def main():
-    slownik = {'Poland': 'Warsaw', 'Germany': 'Berlin', 'Austria': 'Vienna'}
-    i = (slownik.keys(), slownik.values())
-    print(slownik.get('Austria'))
+    wynik = 0
+    x = int(input('Podaj liczbe: '))
+    for i in range(x+1):
+        wynik += i
+    print(wynik)
 
 if __name__ == '__main__': main()

@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+def main():
+    project_ids = {
+    '01': 'open', 
+    '03': 'in progress',
+    '05': 'in progress',
+    '04': 'completed'
+    }
+
+    lista = set(project_ids.values())
+    lista2 = list(lista)
+    print(lista2)
+
+
+
+if __name__ == '__main__': main()

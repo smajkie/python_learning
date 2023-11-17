@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/quiz/5843380#overview
+
+def main():
+    slowo = 'asdasdasdasd'
+    index = 0
+    for i in range(len(slowo)):
+        print(f'Index: {index} wartosc: {slowo[i]}')
+        index += 1
+
+
+
+if __name__ == '__main__': main()
