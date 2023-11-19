@@ -17,6 +17,7 @@ reverse()	Reverses the order of the list
 sort()	Sorts the list """
 
 def main():
+    lista_test = list(range(10))            # jak szybko skreowac liste
     lista = []
     lista.append('cos')                     #wstawia na koniec, append bierze tylko 1 arg
     print(lista)
@@ -38,6 +39,9 @@ def main():
     lista.extend(['c', 'aaa']*2)
     print(lista)
     print(sorted(lista))                    #list.sort method sorts the list in place and returns None. If you want to return the sorted list use sorted method.
+    values = [-5, 2, 8, -1, 9, -3]                  # jak posortowac po wartosci bezwzglednej
+    sorted_values = sorted(values, key=abs)
+    print(sorted_values)
     lista = [1, 'cos', 2, 'egh', 4.5, True]             #milo ze mozna mieszac wszelakie typy danych
     print(lista)
     print(*lista)                                       #printuje w jendnej linijce zawarotsc listy

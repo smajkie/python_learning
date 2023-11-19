@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+def zapiszdopliku(filename, data):                  # ponizej przyklad jak dokumentowac swoje funkcje, pozniej to jest widoczne w help
+    ''' Function writes to file     
+        Inputs:
+            filename - string
+            data - string
+        Outputs:
+            no output'''
+    with open(filename, 'w') as plik:
+        print(data, file=plik)
+
+def odczytzpliku(filename, linia):
+    with open(filename, 'r') as plik:
+        content = plik.readlines()
+        return content[linia-1]
+
+def main():
+    sciezka = 'C:\\Users\\smajk\\Documents\\nauka\\python_learning\\05_funkcje\\'
+    zapiszdopliku(sciezka+'test.txt','Abababa\nBabbabba\nCeccycyylo')
+    mojachcianalina = odczytzpliku(sciezka+'test.txt',2)
+    print(mojachcianalina)
+    help(zapiszdopliku)
+
+if __name__ == '__main__': main()

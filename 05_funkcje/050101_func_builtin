@@ -1,0 +1,49 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+'''
+Funkcje matematyczne:
+abs(x) - zwraca wartość absolutną liczby x.
+round(x, n) - zaokrągla liczbę x do n miejsc po przecinku.
+min(a, b, ...) - zwraca najmniejszą wartość spośród podanych.
+max(a, b, ...) - zwraca największą wartość spośród podanych.
+sum(iterable) - zwraca sumę elementów w podanym iterowalnym obiekcie.
+
+Funkcje konwersji typów:
+int(x) - konwertuje x na liczbę całkowitą.
+float(x) - konwertuje x na liczbę zmiennoprzecinkową.
+str(x) - konwertuje x na łańcuch znaków.
+list(x) - konwertuje x na listę.
+tuple(x) - konwertuje x na krotkę.
+
+Funkcje dotyczące kolekcji:
+len(x) - zwraca liczbę elementów w kolekcji x.
+sorted(iterable, key=key, reverse=reverse) - zwraca posortowaną listę elementów.
+all(iterable) - zwraca True, jeśli wszystkie elementy w iterowalnym obiekcie są prawdziwe.
+any(iterable) - zwraca True, jeśli choć jeden element w iterowalnym obiekcie jest prawdziwy.
+
+Funkcje dotyczące znaków i napisów:
+ord(c) - zwraca wartość Unicode znaku c.
+chr(i) - zwraca znak, którego wartość Unicode to i.
+hex(x) - konwertuje liczbę całkowitą na łańcuch znaków w reprezentacji szesnastkowej.
+
+Inne funkcje:
+print(x, ...) - drukuje podane argumenty na standardowe wyjście.
+input(prompt) - czyta linię z wejścia standardowego.
+type(x) - zwraca typ obiektu x.
+id(x) - zwraca identyfikator (adres w pamięci) obiektu x.
+eval(expression) - wykonuje wyrażenie Pythona podane jako łańcuch znaków.
+zip(a, b, ...) - zwraca iterator, który agreguje elementy z dwóch lub więcej iterowalnych obiektów.
+enumerate(iterable, start=0) - zwraca iterator, który generuje pary (indeks, element) z iterowalnego obiektu.
+reversed(seq) - zwraca odwróconą wersję sekwencji.'''
+
+def main():
+    lista = list(range(10))             #mily szybki sposob na tworzenie listy funkcja list
+    print(lista)
+    values = ['5', '2', '8', '1', '9', '3']
+    print(list(map(int, values)))               # map ladnie przeksztalca cos na cos
+
+
+
+if __name__ == '__main__': main()
