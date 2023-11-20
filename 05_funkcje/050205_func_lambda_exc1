@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+def sort_by_length():
+    lista = ['apple', 'pear', 'banana', 'pineapple', 'orange']
+    lista_tupli_do_sortowania = list(map(lambda slowo: (slowo, len(slowo)), lista))     # tupla skladajaca sie z elementu i jego dlugosci
+    print(lista_tupli_do_sortowania)
+    print(sorted(lista_tupli_do_sortowania, key=lambda element: element[1]))
+    #jak teraz zrobic z powrotem liste z tej tupli? a jakby zrobic lambde ktora z tej listy krotek bierze do listy tylko pierwsze elementy?
+    lista_nowa = list(map(lambda cos: cos[0], lista_tupli_do_sortowania))
+    return lista_nowa
+
+def main():
+    x = sort_by_length()
+    print(x)
+
+
+if __name__ == '__main__': main()
+
+'''Elegancko (bez zamiany w druga strone)
+def sort_by_length(words):
+    return sorted(words, key=lambda x: len(x))
+'''

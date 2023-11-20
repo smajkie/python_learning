@@ -1,0 +1,51 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+'''
+Podstawowa składnia wyrażenia lambda to:
+
+    lambda args: expression
+
+Na przykład, funkcja, która zwraca kwadrat liczby, może być zapisana jako wyrażenie lambda:
+    kwadrat = lambda x: x * x
+
+Użycie
+Wyrażenia lambda są często używane z funkcjami takimi jak map(), filter() i sorted().
+
+Przykład z map()
+    liczby = [1, 2, 3, 4]
+    kwadraty = list(map(lambda x: x ** 2, liczby))
+
+Przykład z filter()
+    liczby = [1, 2, 3, 4, 5]
+    parzyste = list(filter(lambda x: x % 2 == 0, liczby))
+
+Przykład z sorted()
+    punkty = [(1, 2), (3, 3), (1, 1)]
+    punkty_posortowane = sorted(punkty, key=lambda x: x[1])
+
+Ograniczenia
+Wyrażenia lambda są ograniczone do jednego wyrażenia i nie mogą zawierać instrukcji (jak if, while, for itd.). Ponadto nie mają dostępu do innych zmiennych
+ poza tymi, które są im przekazane jako argumenty.
+'''
+
+def main():
+    zwieksz = lambda slowo: slowo.upper()               # definicja funckcji przez lambde jendolinjkowo
+    print(zwieksz('asdasdasd'))                         # od teraz mozemy wolac funkcje przez nasza zdefiniowana
+    lista = ['asss', 'bbbbb', 'cfsdfsdf']
+    print(list(map(zwieksz, lista)))                    # fajnie mozna tutaj wykorzystac funkcje map do tego aby byla wykorzystana na kazdym 
+    print(list(map(lambda slowo: slowo.upper(), lista)))    # obiekcie iterowalnym, a nawet mozna ja definiowac od razu w mapie
+    print(list(map(lambda slowo: (slowo, len(slowo)), lista)))  #lista tupli ze slowem i jego dlugoscia, jest w tym moc!
+
+    # ogolnie lambde mozna wplatac wszedzie tam gdzie funkcja moze byc argumentem
+    def apply_function(x, fn):                          # jeszcze inny sprytny sposob, zrobic funkcje wywolujaca sie na x
+        return fn(x)                                           
+    print(apply_function(5, lambda x: x**2))             # i uzyc jej do dowolnej lambdy sobie tutaj
+    #inny przyklad
+    lista2 = [('jeden', 'one'), ('dwa', 'two'), ('trzy', 'three')]
+    print(sorted(lista2))                               # to posortuje po pierwszym elemencie tupli, jak zrobic po drugim angielskim?
+    print(sorted(lista2, key = lambda angol: angol[1])) # tutaj elementem jest tupla, wystarczy wskazac jej drugi element jako klucz
+
+if __name__ == '__main__': main()

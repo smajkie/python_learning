@@ -4,20 +4,7 @@
 #Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
 
 def main():
-    zwieksz = lambda slowo: slowo.upper()         # definicaj funckcji przez lambde jendolinjkowo
-    print(zwieksz('asdasdasd'))                   # od teraz mozemy wolac funkcje przez nasza zdefiniowana
-    lista = ['asss', 'bbbbb', 'cfsdfsdf']
-    print(list(map(zwieksz, lista)))              # fajnie mozna tutaj wykorzystac funkcje map do tego aby byla wykorzystana na kazdym 
-    print(list(map(lambda slowo: slowo.upper(), lista)))    # obiekcie iterowalnym, a nawet mozna ja definiowac od razu w mapie
-    print(list(map(lambda slowo: (slowo, len(slowo)), lista)))  #lista tupli ze slowem i jego dlugoscia, jest w tym moc!
-
-    # ogolnie lambde mozna wplatac wszedzie tam gdzie funkcja moze byc argumentem
-    def apply_function(x, fn):                    # jeszcze inny sprytny sposob, zrobic funkcje wywolujaca sie na x
-        return fn(x)                                           
-    print(apply_function(5, lambda x: x**2))             # i uzyc jej do dowolnej lambdy sobie tutaj
-    #inny przyklad
-    lista2 = [('jeden', 'one'), ('dwa', 'two'), ('trzy', 'three')]
-    print(sorted(lista2))                         # to posortuje po pierwszym elemencie tupli, jak zrobic po drugim angielskim?
-    print(sorted(lista2, key = lambda angol: angol[1])) # tutaj elementem jest tupla, wystarczy wskazac jej drugi element jako klucz
+    stocks = [(1, 3), (4, 1), (4, 2), (0, 7)]
+    print(sorted(stocks, key=lambda element: element[1]))
 
 if __name__ == '__main__': main()
