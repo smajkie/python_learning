@@ -27,8 +27,9 @@ Przykład z sorted()
     punkty_posortowane = sorted(punkty, key=lambda x: x[1])
 
 Ograniczenia
-Wyrażenia lambda są ograniczone do jednego wyrażenia i nie mogą zawierać instrukcji (jak if, while, for itd.). Ponadto nie mają dostępu do innych zmiennych
- poza tymi, które są im przekazane jako argumenty.
+Wyrażenia lambda są ograniczone do jednego wyrażenia i nie mogą zawierać instrukcji (jak if, while, for itd.). Ponadto nie mają dostępu
+do innych zmiennych poza tymi, które są im przekazane jako argumenty.
+UWAGA: zmienne jakie piszesz po lambda nie moga byc takimi jakie sa juz gdzies uzywane, lambda to taki pattern a nie prawdziwa operacja na prawdziwych danych
 '''
 
 def main():

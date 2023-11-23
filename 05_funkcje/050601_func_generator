@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+def main():
+    
+    def generator(lista):                           # generator dziala na liscie tutaj
+        for item in lista:                          
+            if item.endswith('.py'):                # kazdy element listy konczacy sie na .py jest wynikiem tej funkcji/generatora
+                yield item
+    listaa = ['run_me.py', 'README.md', 'help.txt.', 'script.py', 'menu.py', 'main.py', 'py']   
+    gen = generator(listaa)                         # wynik jest w tej zmiennej
+    for i in gen:
+        print(i)
+    
+    # next(gen)   tez mozna uzyc zeby przeskoczyc na nastepny element
+
+if __name__ == '__main__': main()

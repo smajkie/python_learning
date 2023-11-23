@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+config = {'env': 'development', 'team': 'data science'}         # to musi byc globalna bo jak byla pod main() to byl error
+def main():
+    def update_config(**kwargs):
+        global config                                           # to robi ja globalna po operacjach w update_config() mozna tez zrobic ja 
+        config.update(kwargs)                                   # tylko jeden level wyzej dostepna dla main przez 'nonlocal config'
+
+    update_config(env='TEST')
+    print(config)
+
+if __name__ == '__main__': main()

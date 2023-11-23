@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+import datetime
+
+def log(dane, dt=datetime.datetime.utcnow):
+    print(dt(), dane)
+
+def logger(*args):
+    for i in args:
+        log(i)
+    
+def main():
+    print('Start')
+    logger('name','John','age=35','Los Angeles')
+
+
+
+if __name__ == '__main__': main()

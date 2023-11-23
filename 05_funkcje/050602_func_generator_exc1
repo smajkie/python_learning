@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+'''Napisz generator o nazwie fibonacci(), który będzie zwracać kolejne liczby z ciągu Fibonacciego. Generator powinien działać
+w nieskończoność, tzn. zwracać kolejne liczby aż do przekroczenia zakresu typu int'''
+lista = []
+def gen_fib():
+    lista = [0,1]
+    yield 0
+    yield 1
+    i = 2
+    while i >= 2:
+        y = lista[i-1] + lista[i-2]
+        lista.insert(i, y)
+        i += 1
+        yield y
+
+z = gen_fib()
+print(next(z))
+
+''' sugerowane rozwiazanie:
+def fibonacci():                            
+    a, b = 0, 1
+    while True:
+        yield a
+        a, b = b, a + b                 przesuwa sie w prawo ladnie tylko yieldujac jeden element
+'''

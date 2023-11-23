@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+'''Z listy stocks wyodrębnij spółki z indeksu 'mWIG40' w postaci listy i wynik wydrukuj do konsoli. W rozwiązaniu skorzystaj z wyrażenia lambda.'''
+
+
+def main():
+    stocks = [
+    {'indeks': 'mWIG40', 'name': 'TEN', 'price': 304},
+    {'indeks': 'mWIG40', 'name': 'PLW', 'price': 309},
+    {'indeks': 'sWIG80', 'name': 'BBT', 'price': 22}
+    ]
+    tylkomWIG40 = list(filter(lambda spolki: spolki['indeks'] == 'mWIG40', stocks))           # nazwa 'spolki' jest tylko pod 'pattern' lambdy
+    tylko_spolki = list(map(lambda spolki: spolki['name'], tylkomWIG40))                      # tutaj moze byc spolki jeszce raz, to tylko pattern
+    print(tylko_spolki)
+
+
+
+
+if __name__ == '__main__': main()
