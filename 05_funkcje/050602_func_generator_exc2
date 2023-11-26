@@ -1,0 +1,39 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+'''Cwiczenie 25 z rodzialu FUNKCJE'''
+
+FILE = 'C:\\Users\\smajk\\Documents\\nauka\\python_learning\\05_funkcje\\patients.txt'
+def pacjent():
+    with open(FILE, 'r') as plik:
+        for line in plik:
+            yield(line)
+
+def main():
+    pacjentos = pacjent()
+    slownik = {}
+    for i in pacjentos:
+        a = i.split(',')
+        a[1] = int(a[1])
+        #a[1].rstrip()
+        slownik['name'] = a[0]
+        slownik['age'] = a[1]
+        print(slownik)
+ 
+'''
+def patient_generator(filename):
+    with open(filename) as file:
+        for line in file:
+            data = line.strip().split(',')
+            name = data[0]
+            age = int(data[1])
+            yield {'name': name, 'age': age}
+ 
+ 
+patients = patient_generator('patients.txt')
+for patient in patients:
+    print(patient)
+    '''
+
+if __name__ == '__main__': main()

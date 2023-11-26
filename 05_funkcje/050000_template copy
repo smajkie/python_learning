@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+def main():
+    ticker = ('TEN', 'PLW', 'CDR')
+    full_name = ('Ten Square Games', 'Playway', 'CD Projekt')
+    lista = []
+    for i in range(len(ticker)):
+        element_listy = (ticker[i],full_name[i])
+        lista.append(element_listy)
+    print(lista)
+
+
+
+if __name__ == '__main__': main()

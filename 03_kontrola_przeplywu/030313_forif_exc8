@@ -1,0 +1,49 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+def main():
+    points = [
+    {'player': 'Alice', 'scored': 5},
+    {'player': 'Bob', 'scored': 7},
+    {'player': 'Charlie', 'scored': 3},
+    {'player': 'Alice', 'scored': 2},
+    {'player': 'Bob', 'scored': 4},
+    {'player': 'Charlie', 'scored': 6},
+    {'player': 'Alice', 'scored': 3},
+    {'player': 'Bob', 'scored': 8},
+    {'player': 'Charlie', 'scored': 1},
+    ]
+
+    wynikA = 0
+    wynikB = 0
+    wynikC = 0
+    for wynik in points:
+        if wynik['player'] == 'Alice':
+            #print(wynik['scored'])
+            wynikA = wynikA + wynik['scored']
+        elif wynik['player'] == 'Bob':
+            #print(wynik['scored'])
+            wynikB = wynikB + wynik['scored']
+        elif wynik['player'] == 'Charlie':
+            #print(wynik['scored'])
+            wynikC = wynikC + wynik['scored']
+    print(wynikA, wynikB, wynikC)
+
+if __name__ == '__main__': main()
+
+''' Sugerowane rozwiazanie
+player_points = {}
+ 
+for point in points:
+    player = point['player']
+    score = point['scored']
+    if player in player_points:
+        player_points[player] += score
+    else:
+        player_points[player] = score
+ 
+for player, score in player_points.items():
+    print(f'{player} - {score} points.')
+'''
