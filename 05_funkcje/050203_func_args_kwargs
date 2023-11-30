@@ -20,6 +20,15 @@ def argsyikwargsy(*args, **kwargs):
     print(len(kwargs))
     return kwargs
 
+def multi(*args):                       # tu chodzilo o napisanie funkcji ktora jako argument bierze liste lub tuple i zwraca iloczyn wszystkich jej elementow
+    # rozpoznaj czy jest lista czy tupla - to zawsze jest lista, jak wpadnie tupla to wciaz jest to lista (tupli) (jednoelementowa lista)
+    wynik = 1
+    for arg in args[0]:
+        wynik *= arg
+    return wynik    
+
+
+
 def main():
 
     argsy(1,2,3,4,5)
@@ -28,6 +37,10 @@ def main():
     argsyikwargsy(1,2,3, a=10, b=20)
     f = argsyikwargsy(1,2,3, a=10, b=20)
     print(f)
+
+    print(multi([1,2,3,4]))
+    print(multi((1,2,3,4)))
+
 
 
 if __name__ == '__main__': main()

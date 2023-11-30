@@ -3,15 +3,15 @@
 
 #Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
 
-def main():
-    ticker = ('TEN', 'PLW', 'CDR')
-    full_name = ('Ten Square Games', 'Playway', 'CD Projekt')
-    lista = []
-    for i in range(len(ticker)):
-        element_listy = (ticker[i],full_name[i])
-        lista.append(element_listy)
-    print(lista)
+def multi(*args):
+    # rozpoznaj czy jest lista czy tupla - to zawsze jest lista, jak wpadnie tupla to wciaz jest to lista (tupli) (jednoelementowa lista)
+    wynik = 1
+    for arg in args[0]:
+        wynik *= arg
+    return wynik    
 
+print(multi([1,2,3,4]))
+   
+    
+    
 
-
-if __name__ == '__main__': main()
