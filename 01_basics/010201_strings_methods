@@ -29,6 +29,6 @@ def main():
     x = x.strip()                           # strip usuwa tylko spacje (wszystkie) rstrip po prawej lstrip po lewej
     print(x)
     y = '1,2,3,4,5'.split(',')              # dzieli znakiem i wrzuca do listy
-    print(type(y))
+    print(y)
 
 if __name__ == '__main__': main()
