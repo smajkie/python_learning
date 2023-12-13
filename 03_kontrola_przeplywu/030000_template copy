@@ -3,18 +3,18 @@
 
 #Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
 
+def longest(*args):
+    max = 0
+    for i in args:
+        print(i)
+        if len(i) > max:
+            max = len(i)
+    return max
+
+
+
 def main():
-    suma = 0
-    energy_output = [
-    [0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4],
-    [0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 0.9, 0.8, 0.7, 0.6, 0.5],
-    [0.6, 0.7, 0.8, 0.9, 1.0, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3],
-    ]
-    for panel in energy_output:
-        for moc in panel:
-            suma += moc
-    print(suma)
-
-
-
+    x = longest('asd' ,'ds' ,'ddddddd')
+    print(x)
+    
 if __name__ == '__main__': main()
