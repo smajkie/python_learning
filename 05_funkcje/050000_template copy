@@ -3,15 +3,83 @@
 
 #Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
 
-def multi(*args):
-    # rozpoznaj czy jest lista czy tupla - to zawsze jest lista, jak wpadnie tupla to wciaz jest to lista (tupli) (jednoelementowa lista)
-    wynik = 1
-    for arg in args[0]:
-        wynik *= arg
-    return wynik    
+fnames = ['data1.txt', 'data2.txt', 'data3.txt', 'view.jpg']
 
-print(multi([1,2,3,4]))
-   
+def gen(lista):
+    for plik in lista:
+        if (plik[-4::]) == '.txt':
+            yield plik
+
+a = list(gen(fnames))
+print(a)
+print(fnames)
+
+
+def enum(lista2):
+    index = 0
+    for cos in lista2:
+        tupla = (cos, index)
+        index += 1
+        yield tupla
+
+a = enum(fnames)
+print(*a)
+
+days = ['pon', 'wt', 'śr', 'czw', 'pt', 'sb', 'nd']
+
+
+
+
+def dayname(index):
+    index = index % 7
+    days = ['pon', 'wt', 'śr', 'czw', 'pt', 'sb', 'nd']
+    yield days[index - 1]
+    yield days[index]
+    yield days[(index + 1)]
+
+
+
+def even_numbers(n):
+    for i in range(n):
+        if i % 2 == 0:
+            yield i
+    #pass
+
+for number in even_numbers(10):
+    print(number, end=',')
+
+print()
+
+for number in even_numbers(30):
+    print(number, end=',')
+
+def zunifikuj(target, prefix):
+    ile_brakuje = target - len(prefix)
+    return ile_brakuje * '0' + prefix
+
+def order_number_generator(prefix, start, end):
+    for zam in range(start - 1, end + 1):
+        wynik = prefix + '-'+ zunifikuj(6, str(zam))
+        print(wynik)
+        
+order_number_generator('AAAf', 11, 23)
+
+def silnia(n):
+    wynik = 1
+    for a in range(1,n+1):
+        wynik = wynik * a
+    return wynik
+
+print(silnia(5))
+
+def silnia2(n):
+    if n == 0:
+        return 1
+    else:
+        return n * silnia2(n-1)
     
-    
+print(silnia2(3))
+
+
+
 

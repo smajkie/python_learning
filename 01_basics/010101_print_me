@@ -32,7 +32,8 @@ def main():
     # formatowanie ladne
     print(f'This platform runs {platform.system()} system with release {platform.release()} on processor {platform.processor()}')
     # albo
-    print('This platform runs {} system with release {} on processor {}'.format(platform.system(), platform.release(), platform.processor()))
+    print('This platform runs {} system with release {:33} on processor {}'.format(platform.system(), platform.release(), platform.processor()))
+    # to 33 tutaj ladnie rezerwuje tyle miejsca na ta wartosc, przydatne przy ladnym formatowaniu/wyrownywaniu
     # albo2
     print('This platform runs {2} system with release {0} on processor {1}'.format(platform.system(), platform.release(), platform.processor()))
 

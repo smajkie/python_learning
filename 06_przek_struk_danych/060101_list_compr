@@ -1,0 +1,35 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+def main():
+    result = []
+    for i in range(10):
+        wynik = i ** 2
+        result.append(wynik)
+    print(result)
+# inaczej
+    result2 = [i ** 2 for i in range(10)]           # moc list comprehension
+    print(result2)
+
+    lista = [i for i in range(10)]                  # uzyte do ultra szybkej generacji listy
+    print(lista)
+    lista2 = [i for i in range(100) if i % 5 == 0]  # tutaj z dodatkowym warunkiem na podzielnosc prez 5
+    print(lista2)
+
+# zagniezdzenia
+    l1 = ['1', '2', '3']
+    l2 = ['a', 'b', 'c']
+    wynikowo = []
+    for cos in l1:
+        for cos2 in l2:
+            wynikowo.append(cos+cos2)
+    print(wynikowo)
+    #tymczasem list compr:
+    wynikowo2 = [cos + cos2 for cos in l1 for cos2 in l2]
+    print(wynikowo2)
+
+
+
+if __name__ == '__main__': main()

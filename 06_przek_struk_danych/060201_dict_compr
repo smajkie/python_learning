@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+slownik = {'INT': 'Intel Corporation', 'AMZ': 'Amazon Trade', 'CAS': 'CASA-SYSTEMS Corporation'}
+
+print(slownik.keys(),slownik.values(),slownik.items())
+
+for klucz, wartosc in slownik.items():                              #tradycyjna petla do iterowania po elementach slownika
+    print('Firma: {} ma pelna nazwe: {}'.format(klucz, wartosc))
+
+# magia dict compr
+nowy_slownik = {klucz:wartosc for klucz, wartosc in slownik.items()}
+print(nowy_slownik)
+
+# mozna tez zamiast do slownika dac do zbioru (cos ala set comprehnesion wiec) wtedy mamy zbior tupli z wartosciami
+zbior_tupli = {(klucz, wartosc) for (klucz, wartosc) in slownik.items()}
+print(type(zbior_tupli), zbior_tupli)
+
+#czesto robi sie zamiane wartosci z kluczami:
+nowy_slownik2 = {wartosc:klucz for klucz, wartosc in slownik.items()}
+print(nowy_slownik2)
+
+#czesto potrzebujemy zrobic jakies operacje na nowym kluczu lub wartosci
+nowy_slownik3 = {klucz.lower(): wartosc for klucz, wartosc in slownik.items()}
+print(nowy_slownik3)
+
+#tak jak przy listach i tu mozna warunkowac na koncu
+nowy_slownik4 = {wartosc:klucz for klucz, wartosc in slownik.items() if 'Corp' in wartosc if 'Corp' not in klucz} #kilka warunkow bez AND 
+print(nowy_slownik4)
+
+#mozna mocno manipulowac kluczami lub wartosciami
+nowy_slownik5 = {klucz: 'Corp' if 'Corp' in wartosc else 'Inc' for klucz, wartosc in slownik.items()}
+print(nowy_slownik5)
+
+#szybkie robienie nowego slownika z jakichs wyrazen matematycznych i tylko na podstawie operacji na kluczu np:
+numbers = range(20)
+nowy_slownik6 = {klucz: klucz **2 for klucz in numbers if klucz % 2 == 0}
+print(nowy_slownik6)
+
+#oczywiscie zagniezdzoen slowniki tez beda smigac:
+gniazdo = {1: {'cena': 200, 'ilosc': 10}, 2: {'cena': 100, 'ilosc': 10}}
+nowy_slownik7 = {klucz: wartosc['cena'] * wartosc['ilosc'] for klucz, wartosc in gniazdo.items()}
+print(nowy_slownik7)
