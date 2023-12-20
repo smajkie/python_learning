@@ -1,0 +1,62 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+stars = [
+    ('Alpha Centauri', 4.37),
+    ('Barnard\'s Star', 5.96),
+    ('Wolf 359', 7.78),
+    ('Lalande 21185', 8.29),
+    ('Sirius A', 8.6),
+    ('Sirius B', 8.6),
+    ('Luyten 726-8 A', 8.73),
+    ('Luyten 726-8 B', 8.73),
+    ('Ross 154', 9.69),
+    ('Ross 248', 10.32),
+]
+
+close_stars = {gwiazda[0] for gwiazda in stars if gwiazda[1] < 8}
+print(close_stars)
+
+###
+
+data = [(1, 20), (2, 15), (3, 25), (4, 18), (5, 22), (6, 21)]
+data20 = {dzien for (dzien, wartosc) in data if wartosc >= 20}
+print(data20)
+
+###
+
+courses = [
+    {
+        'id': 1,
+        'name': 'Python for Beginners',
+        'tags': ['Python', 'Programming', 'Beginner']
+    },
+    {
+        'id': 2,
+        'name': 'Data Science with Python',
+        'tags': ['Python', 'Data Science', 'Statistics']
+    },
+    {
+        'id': 3,
+        'name': 'Machine Learning',
+        'tags': ['Python', 'Machine Learning']
+    }
+]
+
+unique_tags = {kurs['tags'][jezyk] for kurs in courses for jezyk in range(1,len(kurs['tags']))}
+print(unique_tags)
+
+# sugerowane rozwiazanie:
+
+unique_tags2 = {tag for course in courses for tag in course['tags']}
+
+###
+
+description = 'Playway: Playway to producent gier komputerowych.'
+# Zamień wszystkie znaki na małe, usuń dwukropek oraz kropkę i następnie podziel otrzymany tekst na słowa.
+# Z tak otrzymanej listy utwórz zbiór unikalnych słów. Wydrukuj długość otrzymanego zbioru do konsoli.
+
+zbiorek = {slowo.lower() for slowo in description}
+print(zbiorek)

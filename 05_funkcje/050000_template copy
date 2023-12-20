@@ -80,6 +80,23 @@ def silnia2(n):
     
 print(silnia2(3))
 
+###
+
+listka = ['p', 2, 4.3, None]
+def czystr(*args):
+    counter = 0
+    for i in args[0]:
+        if isinstance(i, str):
+            counter += 1
+    return counter
+
+print(czystr(listka))
+
+# ladniej:
+
+def count_str(items):
+    return sum(isinstance(item, str) for item in items)
+
 
 
 
