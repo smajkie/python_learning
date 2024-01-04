@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+class Auto:
+    kolor = 'czerwony'
+    marka = 'bmw'
+    max_speed = 177
+
+fura1 = Auto()
+fura2 = Auto()
+
+print(id(fura1),'\n',id(fura2))             # widac ze to sa inne obiekty
+
+fura1.felgi = 18                            # mozna dodawac nowe atrybuty do pojedynczego obiektu
+print(fura1.felgi)                          # to zadziala dla fura1 ale fura2 nie ma takiego atrybutu i nie zadziala
+
+Auto.swiatla = 'Led'                          # mozna tez dodac nowy atrybut dla calej klasy wtedy wszystkie obiekty go dostana
+print(fura1.swiatla, fura2.swiatla)

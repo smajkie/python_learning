@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+class Auto:
+    
+    def pokaz_auto(self):                           # self potrzebne aby odwolywac sie do obiektu wewnatrz klasy
+        self.kolor = 'Czerwony'
+        self.speed = 122
+        print(f'To auto ma kolor {self.kolor} i jedzie {self.speed}')
+
+
+# Najczesciej aby wywolac ta funkcje najpierw robimy obiekt
+fura = Auto()
+# i teraz mozemy na tym obiekcie uruchomic funkcje
+fura.pokaz_auto()
+#ale mozna tez zrobic to na klasie tak (nieco mniej popularne)
+Auto.pokaz_auto(fura)               # to pokazuje tez po co nam self - funkcja musi miec obiekt dlatego go wczesniej utworzylem i wyzej
+                                    # ta funkcja jest na obiekcie

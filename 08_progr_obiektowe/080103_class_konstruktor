@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+class Auto:
+    
+    def __init__(self, kolor, marka, predkosc):         # konstruktor to jest szablon do tworzenia obiektow, do jego dzialania potrzebny
+        self.kolor = kolor                              # jest obiekt (self) i opcjonalnie jakies inne atrybuty tego obiektu
+        self.marka = marka
+        self.predkosc = predkosc
+
+    def czy_super_auto(self):
+        if self.kolor == 'Czerwony' and self.predkosc >= 100:
+            print(f'Samochod marki {self.marka} jest superautem!')
+        else:
+            print(f'Dupa nie auto to {self.marka}')
+
+
+furas1 = Auto('Czerwony', 'BMW', 222)
+furas2 = Auto('Bialy', 'Dacia', 100)
+
+furas1.czy_super_auto()
+furas2.czy_super_auto()

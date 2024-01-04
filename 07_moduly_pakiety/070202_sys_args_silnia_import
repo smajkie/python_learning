@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+import sys
+import silnia as s
+
+result = s.silnia(5)
+print(result)
+
+
+

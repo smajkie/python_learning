@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+import datetime
+
+print(dir(datetime.date))
+x = datetime.date(2024, 6, 2)
+y = datetime.date(2024, 6, 1)
+print(x-y)

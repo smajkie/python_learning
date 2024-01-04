@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+import os
+#print(dir(os))
+
+for plik in os.listdir('sample_dir1'):
+    if plik.endswith('.jpg'):
+        print('Obrazek to:', plik)
+#    
+print('#'*30)
+#
+#print(os.getcwd())                              #zobacz najpierw w jakim katalogu jest cmd
+for root, dirs, files in os.walk(os.getcwd()):
+    print(root)
+    print(dirs)
+    print(files)
+
+#    
+print('#'*30)
+#
+path = '.'
+lista = os.listdir(path)
+for item in lista:
+    print(item)

@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+import sys
+
+print(sys.argv)                                 #poda wszystkie argumenty ale zacznie od samego pliku
+#arguments = sys.argv                            #czyli lista argumentow, ale na [0] jest nazwa pliku
+arguments = sys.argv[1:]                       #mozna tez pominac nazwe pliku i wziac tylko podawane argumenty
+
+i = 1
+while arguments:
+    print('Argument nr {}: {}'.format(i, arguments.pop(0)))     # popem zabieramy pierwszy element z listy
+    i += 1

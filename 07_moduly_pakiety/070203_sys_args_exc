@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+import re
+
+string = 'Python 3.8'
+x = re.findall(pattern='\d', string = string)
+print(x)
+#
+print('#'*30)
+#
