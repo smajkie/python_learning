@@ -1,0 +1,37 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+class Auto:
+
+    baza_samochodow = []
+    
+    def __init__(self, kolor, marka, predkosc):
+        self.kolor = kolor                              
+        self.marka = marka
+        self.predkosc = predkosc
+        self.baza_samochodow.append(self)
+
+    def czy_super_auto(self):
+        if self.kolor == 'Czerwony' and self.predkosc >= 100:
+            print(f'Samochod marki {self.marka} jest superautem!')
+        else:
+            print(f'Dupa nie auto to {self.marka}')
+
+    @staticmethod                                       # robimy dekorator, po prostu funkcje statyczna ktora nie jest zwiazana z 
+    def ile_aut():                                      # konkretnym obiektem jak 'czy_super_auto' ale z klasą Auto
+        print('Obecnie w bazie znajduje sie {} aut(a)'.format(len(Auto.baza_samochodow)))
+
+    @classmethod                                       # to wlasciwie to samo tyle ze funkcja dziala na obiekcie calym 
+    def ile_aut2(cls):
+        print('Obecnie w bazie znajduje sie {} aut(a)'.format(len(Auto.baza_samochodow)))
+
+furas1 = Auto('Czerwony', 'BMW', 222)
+furas2 = Auto('Bialy', 'Dacia', 100)
+
+furas1.czy_super_auto()
+furas2.czy_super_auto()
+
+Auto.ile_aut()                                          # nie trzeba wolac metody na obiekcie zeby cos wyciagnac z klasy
+Auto.ile_aut2()

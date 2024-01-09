@@ -3,16 +3,27 @@
 
 #Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
 
-class Product:
-    def __init__(self, name, price, quantity):
+class Soldier:
+    military_count = 0
+ 
+    def __init__(self, name, rank, years_of_service):
         self.name = name
-        self.price = price
-        self.quantity = quantity
+        self.rank = rank
+        self.years_of_service = years_of_service
+        Soldier.military_count += 1
+ 
+    @staticmethod                       # albo @classmethod wtedy ponizsza funkcje trzeba przerobic (calculate_years)
+    def calculate_years_of_service(service_length):
+        years, days = divmod(service_length, 365)
+        return f'{years} year(s), {days} days'
 
-    def get_discounted_price(self, rabat):                      #ale niech funkcja zwraca cene po rabacie ale nie zmienia oryginalnej ceny
-        return self.price - self.price * (rabat / 100)
-
-p = Product('Cos', 100, 11)
-x = p.get_discounted_price(10)
+    
+Soldier('aaa', 'sergant', 22)
+x = Soldier.calculate_years_of_service(11)
 print(x)
+x = Soldier.calculate_years_of_service(1221)
+print(x)
+
+        
+        
 
