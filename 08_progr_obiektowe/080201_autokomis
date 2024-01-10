@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+class Autokomis:
+
+    def __init__(self, slownik_aut):
+        self.slownik_aut = slownik_aut
+
+    def dodaj_auto(self, auto):
+        self.auto = auto
+        self.slownik_aut.update(auto)
+
+    def usun_auto():
+        pass
+
+    def wyswietl_auta_wkomisie(self):
+        for i, j in self.slownik_aut.items():
+            print(f'Marka: {i}, cena: {j}')
+
+
+if __name__ == '__main__':
+
+    juz_w_komisie = {'BMW 318': 35000, 'Audi A4': 45000, 'Citroen Berlingo': 12000}
+    autokomis = Autokomis(juz_w_komisie)
+
+    autokomis.wyswietl_auta_wkomisie()
+    autokomis.dodaj_auto('Peugeot': 40000)
+    autokomis.wyswietl_auta_wkomisie()
