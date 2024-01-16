@@ -3,28 +3,55 @@
 
 #Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
 
+import sys
+
 class Autokomis:
 
     def __init__(self, slownik_aut):
         self.slownik_aut = slownik_aut
 
-    def dodaj_auto(self, auto):
-        self.auto = auto
-        self.slownik_aut.update(auto)
+    def dodaj_auto(self):
+        marka = input('Podaj marke: ')
+        cena = int(input('Podaj cene: '))
+        nowy_slownik = {marka: cena}
+        self.slownik_aut.update(nowy_slownik)
 
-    def usun_auto():
-        pass
+    def usun_auto(self):
+        marka = input('Podaj marke: ')
+        if marka in self.slownik_aut.keys():
+            self.slownik_aut.pop(marka)
+            print('Usuniete!')
+        else:
+            print(f'Auto: {marka} nie istnieje w komisie!')
 
     def wyswietl_auta_wkomisie(self):
         for i, j in self.slownik_aut.items():
             print(f'Marka: {i}, cena: {j}')
+        print('#'*30)
 
 
 if __name__ == '__main__':
 
+    # zalozmy juz jakis obiekt typu komis z jakimis autami
     juz_w_komisie = {'BMW 318': 35000, 'Audi A4': 45000, 'Citroen Berlingo': 12000}
     autokomis = Autokomis(juz_w_komisie)
 
-    autokomis.wyswietl_auta_wkomisie()
-    autokomis.dodaj_auto('Peugeot': 40000)
-    autokomis.wyswietl_auta_wkomisie()
+    #autokomis.wyswietl_auta_wkomisie()
+    #autokomis.dodaj_auto()
+    #autokomis.wyswietl_auta_wkomisie()
+
+    while True:
+        print('Wprowadz 1 aby wyswietlic stan komisu')
+        print('Wprowadz 2 aby dodać nowe auto w komis')
+        print('Wprowadz 3 aby usunac auto z komisu')
+        print('Wprowadz 4 aby zakończyć')
+        wybor_uzytkownika = int(input('Wybierz opcje z powyższych: '))
+        if wybor_uzytkownika == 1:
+            autokomis.wyswietl_auta_wkomisie()
+        elif wybor_uzytkownika == 2:
+            autokomis.dodaj_auto()
+        elif wybor_uzytkownika == 3:
+            autokomis.usun_auto()
+            autokomis.wyswietl_auta_wkomisie()
+        elif wybor_uzytkownika == 4:
+            sys.exit()
