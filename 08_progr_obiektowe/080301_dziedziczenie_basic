@@ -1,0 +1,29 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+class Czlowiek:
+
+    def __init__(self, imie, nazwisko):
+        self.imie = imie
+        self.nazwisko = nazwisko
+
+    def przedstaw_czlowieka(self):
+        print(f'{self.imie} {self.nazwisko}', end='')
+    
+class Pilkarz(Czlowiek):
+
+    def __init__(self, imie, nazwisko, klub):
+        super().__init__(imie, nazwisko)
+        self.klub = klub
+
+    def przedstaw_pilkarza_jako_czlowieka(self):
+        super().przedstaw_czlowieka()
+        print(f' gra w{self.klub}')
+if __name__ == '__main__':
+
+    pilkarz1 = Pilkarz('mis', 'jogi', ' Legia')
+    pilkarz2 = Pilkarz('jasiu', 'jasiowaty', 'Gornik')
+
+    pilkarz1.przedstaw_pilkarza_jako_czlowieka()
