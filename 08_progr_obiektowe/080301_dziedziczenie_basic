@@ -11,8 +11,12 @@ class Czlowiek:
 
     def przedstaw_czlowieka(self):
         print(f'{self.imie} {self.nazwisko}', end='')
+
+class Klub:
+    def przedstaw_czlowieka(self):
+        print('Barcelona')
     
-class Pilkarz(Czlowiek):
+class Pilkarz(Czlowiek, Klub):                      # wazna jest kolejnosc dziedziczenia, jak zamienisz kolejnosc to metoda z klubu bedzie uzyta
 
     def __init__(self, imie, nazwisko, klub):
         super().__init__(imie, nazwisko)
@@ -21,6 +25,7 @@ class Pilkarz(Czlowiek):
     def przedstaw_pilkarza_jako_czlowieka(self):
         super().przedstaw_czlowieka()
         print(f' gra w{self.klub}')
+
 if __name__ == '__main__':
 
     pilkarz1 = Pilkarz('mis', 'jogi', ' Legia')
