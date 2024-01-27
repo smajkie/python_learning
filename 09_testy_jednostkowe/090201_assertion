@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+def max_min_diff(numbers):
+    """
+    Calculates the difference between the maximum and minimum number
+    in the given list.
+ 
+    :param numbers: A list of numbers.
+    :return: The difference between the maximum and minimum number
+    in the list.
+    """
+    assert len(numbers) > 0
+    return max(numbers) - min(numbers)
+
+if __name__ == '__main__':
+    x = max_min_diff([1,2,3])
+    print(x)
+    y = max_min_diff([])
+    print(y)

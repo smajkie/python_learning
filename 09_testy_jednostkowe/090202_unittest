@@ -1,0 +1,29 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+'''
+tworzenie testu jednostkowego
+1. zaimportowanie unittest
+2. zdefiniowanie funkcji do testowania
+3. stworzenie przypadku testowego uzywaja klasy unittest.TestCase
+4. zdefiniowanie testu jako metody klasy TestCase
+5. call assert function
+6. assert function wywola blad assertionerror jesli otrzymamy blad
+7. wywolaj funkcje main z modulu unittest
+
+'''
+import unittest
+
+def dodaj(x, y):
+    return x + y
+
+class SimpleTest(unittest.TestCase):                         # dziedziczymy po tej klasie
+
+    def test_dodaj(self):
+        self.assertEqual(dodaj(3,4), 3 + 4, msg='Powinno byc 7' )   # tutaj na drugim argumencie jak podamy cos innego niz 7 to wyjdzie assertion error
+
+
+
+if __name__ == '__main__':
+    unittest.main()
