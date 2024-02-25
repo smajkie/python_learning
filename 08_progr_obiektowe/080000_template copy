@@ -1,0 +1,18 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+class Product:
+    def __init__(self, name, price, quantity):
+        self.name = name
+        self.price = price
+        self.quantity = quantity
+
+    def get_discounted_price(self, rabat):                      #ale niech funkcja zwraca cene po rabacie ale nie zmienia oryginalnej ceny
+        return self.price - self.price * (rabat / 100)
+
+p = Product('Cos', 100, 11)
+x = p.get_discounted_price(10)
+print(x)
+
