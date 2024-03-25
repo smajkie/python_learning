@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+class Auto:
+    def __init__(self, marka, kolor, cena):
+        self.marka = marka
+        self._kolor = kolor
+        self.__cena = cena
+
+class Komis(Auto):
+    def __init__(self, marka, kolor, cena, wlasciciel):
+        super().__init__(marka, kolor, cena)
+        self.wlasciciel = wlasciciel
+
+
+if __name__ == '__main__':
+
+    pierdek = Auto('BMW', 'Czerwony', 28000)
+    komisowy_pierdek = Komis('BMW', 'Czerwony', 28000, 'Ziutek')
+
+
+    print(f'{pierdek.marka}')                       # public - zwykla zmienna publiczna dostepna w klasie i poza nią
+    print(f'{komisowy_pierdek._kolor}')             # protected - zmienna dostepna w klasie i tych ktore po niej dzedziczą
+    #print(f'{pierdek.__cena}')                     # private - prywatna dostepna tylko w obrebie klasy
+    print(f'{komisowy_pierdek.__cena}')
