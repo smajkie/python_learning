@@ -3,9 +3,11 @@
 
 #Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
 
-def main():
-    print('Start')
+passw = input("passw")
 
-
-
-if __name__ == '__main__': main()
+if len(passw) > 7:
+    print("Great password there")
+elif len(passw) == 7:
+    print("Password is OK, but not too strong")
+else:
+    print("Your password is weak")

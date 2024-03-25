@@ -32,8 +32,8 @@ def main():
     last_week_data = stock_prices[:-5]
     
 
-    print(f'Average stock price for the first week: $, {sum(first_week_data)/len(first_week_data):.2f}')
-    print(f'Average stock price for the last week: $, {sum(last_week_data)/len(last_week_data):.2f}')
+    print(f'Average stock price for the first week: $ {sum(first_week_data)/len(first_week_data):.2f}')
+    print(f'Average stock price for the last week: $ {sum(last_week_data)/len(last_week_data):.2f}')
 
    
     
