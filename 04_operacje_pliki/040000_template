@@ -3,9 +3,32 @@
 
 #Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
 
-def main():
-    print('Start')
+def strength(password):
+    upper = False
+    digit = False
+    len_result = False
 
+    if len(password) > 8:
+        len_result = True
+    for i in password:
+        if i.isupper():
+            upper = True
+        elif i.isdigit():
+            digit = True
 
+    if len_result == upper == digit == True:
+        result = "Strong password"
+    else:
+        result = "Weak password"
 
-if __name__ == '__main__': main()
+    return result
+
+def foo(lista):
+    suma = 0
+    for i in lista:
+        suma += i
+    return suma / len(lista)
+
+list = [1,2,3,4,5]
+p = foo(list)
+print(p)

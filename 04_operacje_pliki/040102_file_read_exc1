@@ -18,6 +18,7 @@ def main():
         naglowek = file.readline()                          # pozbywam sie pierwszej lini, ladniej mozna tez tak
         kontent = file.readlines()
         # kontent = kontent[1:]                             # jak tu
+        # kontent = file.readlines()[1:]                    # albo jeszcze szybciej (chociaz nie rekomendowane)
         lista = []                                          # bedzie lista list
         for line in kontent:
             linijka = line.rstrip().split(';')              # to funkcja split zwraca liste ktora sobie bierzemy jako liste do linijki

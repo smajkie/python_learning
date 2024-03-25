@@ -4,12 +4,15 @@
 #Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
 
 def func1():
+    """ This is a docstring describing what the function is used for
+    It is very usefull to have this info here. General format is what
+    is taken as input and what it returns """
     print('Elo')
 
 def func2(x,y):
     print('x={} y={}'.format(x,y))
 
-def func3(x,y=10):
+def func3(x,y=10):                      # defaultowe argumenty zawsze po niedefaultowych, wywoalania tej funkcji tak samo
     print('x={} y={}'.format(x,y))
 
 def srednia(x,y,z):
