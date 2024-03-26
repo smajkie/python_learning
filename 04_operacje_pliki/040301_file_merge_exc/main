@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://dailypythonprojects.substack.com/p/project-merge-text-files-in-python?utm_campaign=email&utm_medium=email&utm_source=sendgrid.com
+
+'''
+Write a program that:
+    Reads the content of each text file
+    Merges the content/string of each file making sure the content of a.txt comes first, then b.txt, then c.txt.
+    Writes the merged string into one single text file.
+The expected output is a generated merged_file.txt file that contains the content of all three input files.
+'''
+import filelist as fl
+FILES_TO_MERGE_PATH = 'C:\\github\\python_learning\\04_operacje_pliki\\040301_file_merge_exc\\files\\'
+
+files = fl.list_files_in_directory(FILES_TO_MERGE_PATH)
+if 'merged.txt' in files:
+    files.remove('merged.txt')                                      # if result file already exist dont include it in next iterations
+
+final_content = ''
+
+# iterate over all found files and add content to final_contnent
+for file in files:
+    with open(FILES_TO_MERGE_PATH+file, 'r') as plik:
+        final_content += plik.read()
+        print(final_content)
+
+#write final_contnent
+with open(f'{FILES_TO_MERGE_PATH}merged.txt', 'w') as plik:
+    plik.write(final_content)

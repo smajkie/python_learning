@@ -5,6 +5,7 @@
 
 import sys
 import silnia as s
+# from silnia import silnia                 mozna tez tak wtedy majac dokladna nazwe funkcji mozna ja wolac bezposrednio
 
 result = s.silnia(5)
 print(result)
