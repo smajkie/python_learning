@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
+
+import json
+
+def check_nesting(struktura):
+    for element in struktura:
+        if isinstance(element, dict):
+            print('To jest dict')
+            return "Dict"
+        elif isinstance(element, list):
+            print('To jest list')
+            return "List"
+
+if __name__ == "__main__":
+
+    JSON_PATH = 'C:\\github\\python_learning\\07_moduly_pakiety\\sample_json\\benchmark.json'
+
+    with open(JSON_PATH, 'r') as file:
+        content = file.read()
+
+    print(type(content))
+    data = json.loads(content)
+    print(type(data))
+    x = check_nesting(data)
+    print(x)
+
+    for index, dane1 in enumerate(data):
+        print(index + 1, dane1)
+        for index2, dane2 in enumerate(data[dane1]):
+            print('\t', index2 + 1, dane2)
+            for index3, dane3 in enumerate(data[dane1][dane2]):
+                if isinstance(dane3, dict):
+                    print('\t'*2, index3 + 1, dane3)
+                else:
+                    print(dane3)

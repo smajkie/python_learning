@@ -1,0 +1,57 @@
+{
+    "BenchmarkTestConfig": {
+        "application": {
+            "name": "BenchmarkApp",
+            "setup_vars_path": "C:\\jenkinsAutomation\\dKMB\\openvino\\setupvars.bat",
+            "exe_file_path": "C:\\Users\\secure_test\\dKMB\\openvino_tools\\tools\\deployment_tools_ov_1.0\\inference_engine\\bin\\intel64\\Release\\benchmark_app.exe"
+        },
+        "models": {
+            "list": [
+                {
+                    "filename": "googlenet-v1.xml",
+                    "path": "C:\\jenkinsAutomation\\dKMB\\Models\\googlenet-v1\\tf\\FP16-INT8",
+                    "timeout": 600,
+                    "type": "IR"
+                },
+                {
+                    "filename": "mobilenet-v2.xml",
+                    "path": "C:\\jenkinsAutomation\\dKMB\\Models\\mobilenet-v2\\caffe2\\FP16-INT8",
+                    "timeout": 600,
+                    "type": "IR",
+                    "operations_per_frame": 0.615
+                },
+                {
+                    "filename": "resnet-50-pytorch.xml",
+                    "path": "C:\\jenkinsAutomation\\dKMB\\Models\\resnet-50-pytorch\\caffe2\\FP16-INT8",
+                    "timeout": 600,
+                    "type": "IR",
+                    "operations_per_frame": 8.216
+                }
+            ]
+        },
+        "configurations": {
+            "param1": {
+                "d": "VPUX",
+                "niter": null,
+                "nireq": null,
+                "api": null,
+                "ip": null,
+                "op": null,
+                "il": null,
+                "ol": null,
+                "t": null
+            }
+        },
+        "test_scenarios": [
+            {
+                "models": [
+                    "googlenet-v1.xml"
+                ],
+                "configurations": [
+                    "param1"
+                ]
+            }
+        ],
+        "test_iterations": 3
+    }
+}
