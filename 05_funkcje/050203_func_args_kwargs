@@ -4,13 +4,13 @@
 #Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
 
 def argsy(*args):
-    print(args)                         # to zwroci liste elementow podanych do wywolania funkcji
+    print(args)                         # to zwroci tuple elementow podanych do wywolania funkcji
 
 def kwargsy(**kwargs):
     print(kwargs)                       # tutaj kwargsy moga miec jedynie postac slownika
 
 def argsyikwargsy(*args, **kwargs):
-    print(args)                         # lista argumentow
+    print(args)                         # tupla argumentow
     print(kwargs)                       # slownik zmiennych i ich wartosci
     #mozna to wykorzystac:
     print(sum(args))
@@ -21,13 +21,10 @@ def argsyikwargsy(*args, **kwargs):
     return kwargs
 
 def multi(*args):                       # tu chodzilo o napisanie funkcji ktora jako argument bierze liste lub tuple i zwraca iloczyn wszystkich jej elementow
-    # rozpoznaj czy jest lista czy tupla - to zawsze jest lista, jak wpadnie tupla to wciaz jest to lista (tupli) (jednoelementowa lista)
     wynik = 1
     for arg in args[0]:
         wynik *= arg
     return wynik    
-
-
 
 def main():
 

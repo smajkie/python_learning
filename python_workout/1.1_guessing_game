@@ -1,0 +1,56 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://learning.oreilly.com/library/view/python-workout/9781617295508/
+
+'''Exercise 1.1
+Write a function (guessing_game) that takes no arguments. When run, the function chooses a random integer between 0 and 100 (inclusive).
+Then ask the user to guess what number has been chosen. Each time the user enters a guess, the program indicates one of the following:
+Too high
+Too low
+Just right
+If the user guesses correctly, the program exits. Otherwise, the user is asked to try again.
+The program only exits after the user guesses correctly.
+'''
+
+import random
+
+def zgadywanka():
+    '''
+        Function randomize from range 0 to 100 and ask user for guess, answering too low or too high till it hits the number
+        No input taken
+        No return
+    '''
+
+    cel = random.randint(0, 100)              # tu jest ciekawostka bo ta liczba 100 jest brana pod uwage, inaczej niz w wiekoszosci przypadkow
+    chances = 3
+
+    while True and chances > 0:
+        #print(cel)
+        try:
+
+            x = int(input("Podaj swoj typ: "))
+            if x < 0 or x >100:
+                print('Twoja cyfra nie jest z wymaganego zakresu 0-100')
+#                raise Exception('To nie jest cyfra')    # tylko ze to przerwie calkime program
+            else:
+                if x < cel:
+                    print("Za malo")
+                    chances -= 1
+                
+                elif x > cel:
+                    print("Za duzo")
+                    chances -= 1
+                
+                else:
+                    print(f'Bingo, {x} to jest puszkiwana liczba!')
+                    break
+            
+        except ValueError:
+            print('Twoja odpowiedz nie jest liczba')
+            chances -= 1
+        
+    print("Wykorzystales wszystkie szanse, koniec tego")
+
+if __name__ == "__main__":
+    zgadywanka()

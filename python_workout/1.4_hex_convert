@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://learning.oreilly.com/library/view/python-workout/9781617295508/
+
+'''Exercise 1.4
+For this exercise, you need to write a function (hex_output) that takes a hex number and returns
+the decimal equivalent. That is, if the user enters 50, you’ll assume that it’s a hex number (equal to 0x50)
+and will print the value 80 to the screen. And no, you shouldn’t convert the number all at once using 
+the int function, although it’s permissible to use int one digit at a time
+'''
+
+#Ja sie poddalem z tym wiec rozwiazanie jest z ksiazki:
+
+def hex_output():
+    decnum = 0
+    hexnum = input('Enter a hex number to convert: ')
+    for power, digit in enumerate(reversed(hexnum)):
+        decnum += int(digit, 16) * (16 ** power)
+    print(decnum)
+ 
+hex_output()

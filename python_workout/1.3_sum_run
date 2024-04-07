@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://learning.oreilly.com/library/view/python-workout/9781617295508/
+
+'''Exercise 1.3
+Write a function (run_timing) that asks how long it took for you to run 10 km. The function continues
+to ask how long (in minutes) it took for additional runs, until the user presses Enter. At that point,
+the function exits--but only after calculating and displaying the average time that the 10 km runs took.
+'''
+
+def run_timing():
+    runs = 0
+    time_sum = 0
+    while True :
+        one_run = input('Enter 10 km run time: ')
+        if not one_run:     # potrzebujemy False jak nic nie podasz do inputa, po tym mozna zakonczyc whilea
+            break
+        else:
+            runs += 1
+            time_sum += float(one_run)
+    print(f'Average of {(time_sum / runs):.2f}, over {runs} runs')
+
+if __name__ == "__main__":
+    run_timing()

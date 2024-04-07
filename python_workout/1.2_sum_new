@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://learning.oreilly.com/library/view/python-workout/9781617295508/
+
+'''Exercise 1.2
+The challenge here is to write a mysum function that does the same thing as the built-in sum function.
+However, instead of taking a single sequence as a parameter, it should take a variable number of arguments.
+Thus, although you might invoke sum([1,2,3]), you’d instead invoke mysum(1,2,3) or mysum(10,20,30,40,50).
+'''
+
+def mysum(*numbers):
+    suma = 0
+    for i in numbers:
+        suma += i
+    return suma / len(numbers)
+
+if __name__ == '__main__':
+    print(x := mysum(1,2,3))
+    print(x := mysum(*[1,2,3],4,5))     # * to operator 'rozpakowania' pozwala wyciagnac i przekazac z tej listy kazdy jej element osobno
