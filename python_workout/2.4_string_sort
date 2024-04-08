@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://learning.oreilly.com/library/view/python-workout/9781617295508/
+
+'''Exercise 2.4
+In this exercise, you’ll explore this idea by writing a function, strsort, that takes a single string 
+as its input and returns a string. The returned string should contain the same characters as the input, 
+except that its characters should be sorted in order, from the lowest Unicode value to the highest Unicode value. 
+For example, the result of invoking strsort('cba') will be the string abc.
+'''
+
+
+def strsort(word):
+    return ''.join(sorted(word))
+
+'''Given the string “Tom Dick Harry,” break it into individual words, and then sort those words alphabetically. 
+Once they’re sorted, print them with commas (,) between the names.'''
+
+def sentsort(sentence):
+    return ','.join(sorted(sentence.split(' ')))
+
+print(strsort('bca'))
+print(sentsort('zjadlbym cos dobrego moze'))

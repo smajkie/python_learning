@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://learning.oreilly.com/library/view/python-workout/9781617295508/
+
+'''Exercise 2.2
+Write a function called pl_sentence that takes a string containing several words, separated by spaces.
+(To make things easier, we won’t actually ask for a real sentence. More specifically, there will be no capital letters or punctuation.)
+'''
+
+def pig_latin(sentence):
+    pig_sentence = []                       
+    for slowo in sentence.split(' '):       # od razu iterujemy po slowach inputu ktore spli wsadza do listy
+        if slowo[0] in 'aeiou':
+            pig_sentence.append(f'{slowo}way')
+        else:
+            pig_sentence.append(f'{slowo[1:]}{slowo[0]}ay')
+    return (' '.join(pig_sentence))         #mozna joina ladnie zrobic od razu na elementach listy zamiast += ktore tez by tutaj dzialalo
+ 
+ 
+print(pig_latin('python is always the best'))
+
+

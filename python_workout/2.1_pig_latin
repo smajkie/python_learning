@@ -1,0 +1,44 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://learning.oreilly.com/library/view/python-workout/9781617295508/
+
+'''Exercise 2.1
+If the word begins with a vowel (a, e, i, o, or u), add “way” to the end of the word. So “air” becomes “airway” and “eat” becomes “eatway.”
+If the word begins with any other letter, then we take the first letter, put it on the end of the word, and then add “ay.” Thus, “python” becomes “ythonpay”
+and “computer” becomes “omputercay.”
+For this exercise, write a Python function (pig_latin) that takes a string as input, assumed to be an English word. The function should return
+the translation of this word into Pig Latin. You may assume that the word contains no capital letters or punctuation.
+'''
+
+def pig_latin():
+    piglatin = ''
+    while True:
+        english = input("Whats the word to translate? ")
+        if not english:
+            break
+        # capital first
+        elif english[0] in 'aeiouAEIOU':
+            piglatin = english + 'way'
+            break
+        elif english[0].isupper:
+            piglatin = (english[1:] + english[0] + 'ay').title()
+            break
+        else:
+            piglatin = (english[1:] + english[0] + 'ay')
+            break
+    return piglatin
+    
+if __name__ == "__main__":
+    print(x:= pig_latin())
+
+'''
+def pig_latin(word):
+    if word[0] in 'aeiou':
+        return f'{word}way'
+ 
+    return f'{word[1:]}{word[0]}ay'
+ 
+ 
+print(pig_latin('python'))
+'''

@@ -5,5 +5,9 @@
 
 '''Exercise 1.1'''
 
-tupla = (1,2,3)
-print(tupla[0])
+lista = ['a', 'b', 'c']
+zdanie = ''
+for i in lista:
+    i.join(zdanie)
+
+print(zdanie)

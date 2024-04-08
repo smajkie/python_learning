@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://learning.oreilly.com/library/view/python-workout/9781617295508/
+
+'''Exercise 2.3
+For this exercise, you’ll write a function (called ubbi_dubbi) that takes a single word (string) as an argument. 
+It returns a string, the word’s translation into Ubbi Dubbi. So if the function is called with octopus, 
+the function will return the string uboctubopubus. And if the user passes the argument elephant, you’ll output ubelubephubant.
+'''
+
+
+def ubbi_dubbi(word):
+    output = []
+    for i in word:
+        if i in 'aeoiu':
+            output.append('ub'+i)       #its memory efficient to add to the listi nstead of addint to a string, well with big data chunks of course
+        else:
+            output.append(i)
+    return (''.join(output))
+ 
+ 
+print(ubbi_dubbi('elephant'))
