@@ -1,0 +1,39 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://learning.oreilly.com/library/view/python-workout/9781617295508/
+
+'''Exercise 3.3
+write a function, alphabetize_names, that assumes the existence of a PEOPLE constant defined as shown in the code. 
+The function should return the list of dicts, but sorted by last name and then by first name.
+'''
+
+PEOPLE = [{'first':'Reuven', 'last':'Lerner', 'email':'reuven@lerner.co.il'},
+          {'first':'Donald', 'last':'Trump', 'email':'president@whitehouse.gov'},
+          {'first':'Vladimir', 'last':'Putin', 'email':'president@kremvax.ru'}
+ ]
+
+LISTA = [-1, 5,-3]
+
+def alphabetize_names(people):
+    for person in sorted(people, key = lambda x: [x["last"], x["first"]]):
+        print(f'{person["last"]}, {person["first"]}, {person["email"]}')
+
+alphabetize_names(PEOPLE)
+
+
+def sort_by_absolute(lista):
+    wynik = []
+    wynik = sorted(lista, key = lambda x: [abs(x)])
+    return wynik
+
+print(sort_by_absolute(LISTA))
+
+'''
+Inne rozwiazanie 
+from operator import itemgetter                         #ten itemgetter wyciaga elementy ze struktury
+for p in sorted(people,
+                key=itemgetter('last', 'first')):
+    print(f'{p["last"]}, {p["first"]}: {p["email"]}')
+
+'''

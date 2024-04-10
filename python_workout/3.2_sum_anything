@@ -16,9 +16,9 @@ def mysum(*items):
 
     if not items:
         return items
-    output = items[0]
-    for item in items[1:]:
-        output += item
+    output = items[0]       #to bierze wartosc i typ pierwszego elementu (ktory jest w stanie obsluzyc operator +)
+    for item in items[1:]:  #nastepnie doklada do niego kolejne elementy, co pozwala dodawac cyfry stringi i listy bez definiowania dla nich osobnych zmiennych
+        output += item      #w tej funkcji
     return output
 
 print(mysum())
