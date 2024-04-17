@@ -1,0 +1,34 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://learning.oreilly.com/library/view/python-workout/9781617295508/
+
+'''Exercise 16
+Write a function, dictdiff, that takes two dicts as arguments. The function returns a new dict that expresses the difference between the two dicts.
+If there are no differences between the dicts, dictdiff returns an empty dict. For each key-value pair that differs, the return value of dictdiff 
+will have a key-value pair in which the value is a list containing the values from the two different dicts. If one of the dicts doesn’t contain 
+that key, it should contain None
+
+print(dictdiff(d1, d2)) 
+Prints “{'c': [3, 4]}”, because d1 contains c:3 and d2 contains c:4
+
+print(dictdiff(d3, d4)) 
+Prints “{'c': [None, 4], 'd': [3, None]}”, because d4 has c:4 and d3 has d:3
+'''
+d1 = {'a':1, 'b':2, 'c':3}
+d2 = {'a':1, 'b':2, 'c':4}
+d3 = {'a':1, 'b':2, 'd':3}
+d4 = {'a':1, 'b':2, 'c':4}
+
+def dictdiff(dict1, dict2):
+    result = {}
+    all_keys = dict1.keys() | dict2.keys()      # .keys zwraca set, a | robi joina dwoch setow tutaj do nowego
+    print(all_keys)
+    for key in all_keys:
+        if dict1.get(key) != dict2.get(key):
+            result[key] = [dict1.get(key), dict2.get(key)]
+    print(result)
+
+
+
+dictdiff(d3, d4)
