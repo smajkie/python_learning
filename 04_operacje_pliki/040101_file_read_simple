@@ -32,7 +32,7 @@ def readfile2():                                          # bardziej elegancko n
     print('\n','#'*30,'End of fun2')
 
 def readfile3():                                          # wykorzystujac readline(s)
-    with open(FILE, 'r') as file:
+    with open(FILE, 'r') as file:                         # ta konstrukcja with ... as jest nazywana context manager
         line = file.readline()
         #file.seek(0)
         lines = file.readlines()            # pointer juz zreadlineowal pierwsza linie wiec do listy trafia tylko 2, chyba ze sie go zrestaruje przez seek
