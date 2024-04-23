@@ -1,0 +1,33 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://learning.oreilly.com/library/view/python-workout/9781617295508/
+
+'''Exercise 20
+In this exercise, write two functions. find_longest_word takes a filename as an argument and returns the longest word found in the file. 
+The second function, find_all_longest_words, takes a directory name and returns a dict in which the keys are filenames and the values are 
+the longest words from each file.
+'''
+
+import os
+
+def find_longest_word(filename):
+    longest_word = ''
+    for one_line in open(filename):
+        for one_word in one_line.split():
+            if len(one_word) > len(longest_word):
+                longest_word = one_word
+    return longest_word
+ 
+def find_all_longest_words(dirname):
+    return {filename: find_longest_word(os.path.join(dirname, filename))
+            for filename in os.listdir(dirname) 
+            if os.path.isfile(os.path.join(dirname, filename))}
+
+'''
+return {filename: find_longest_word(os.path.join(dirname, filename))    # piekny dict comprehension gdzie dajemy jako klucz nazwe pliku a wartosc to
+                                                                        # funkcja szukajaca najdluzszy wyraz w tym pliku, os.path.join daje pelna sciezke
+        for filename in os.listdir(dirname)                             # dla pliku a wlasciwie elementu w danym katalogu
+        if os.path.isfile(os.path.join(dirname, filename))}             # jesli ten element jest plikiem a nie katalogiem czy kropka
+
+'''
