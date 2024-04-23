@@ -4,30 +4,13 @@
 #Source: https://learning.oreilly.com/library/view/python-workout/9781617295508/
 
 '''Exercise 19
-In this exercise, write a function, passwd_to_dict, that reads from a Unix-style “password file,” commonly 
-stored as /etc/passwd, and returns a dict based on it
-The function passwd_to_dict should return a dict based on /etc/passwd in which the dict’s keys are usernames and the values are the users’ IDs.
+In this exercise, write two functions. find_longest_word takes a filename as an argument and returns the longest word found in the file. 
+The second function, find_all_longest_words, takes a directory name and returns a dict in which the keys are filenames and the values are 
+the longest words from each file.
 '''
 
-from io import StringIO
-fakefile = StringIO('''
-nobody:*:-2:-2::0:0:Unprivileged User:/var/empty:/usr/bin/false
-root:*:0:0::0:0:System Administrator:/var/root:/bin/sh
-daemon:*:1:1::0:0:System Services:/var/root:/usr/bin/false
-''')
-
-def passwd_to_dict(file):
-    '''   lista = []
-    a = 'nobody:*:-2:-2::0:0:Unprivileged User:/var/empty:/usr/bin/false'
-    lista = str.split(a, sep=':')
-    nowy_slownik = {lista[0]:lista[7] for item in lista}
-    print(nowy_slownik)'''
-    with open(fakefile, 'r') as ff:
-        for line in ff:
-            line = str.split(line, sep=':')
-            nowy_slownik = {line[0]:line[7] for item in line} 
-    print(nowy_slownik)
+import os
 
 
-passwd_to_dict(fakefile)
-
+x = [os.path.join(os.getcwd(), item) for item in os.listdir(os.getcwd()) ]
+print(x)

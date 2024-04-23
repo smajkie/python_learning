@@ -10,7 +10,8 @@ Print last line from a file
 import os
 plik = '01_guessing_game'
 
-desired_path = os.path.dirname(__file__) + '\\' + plik      # wychodzi na to ze __file__ to plik pythonowy jaki piszemy
+#desired_path = os.path.dirname(__file__) + '\\' + plik      # wychodzi na to ze __file__ to plik pythonowy jaki piszemy
+desired_path = os.path.join(os.path.dirname(__file__), plik) # tak jest ładniej
 
 def lastline(file):
     lastline = ''
