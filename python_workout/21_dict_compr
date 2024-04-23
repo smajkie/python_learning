@@ -3,7 +3,7 @@
 
 #Source: https://learning.oreilly.com/library/view/python-workout/9781617295508/
 
-'''Exercise 20
+'''Exercise 21
 In this exercise, write two functions. find_longest_word takes a filename as an argument and returns the longest word found in the file. 
 The second function, find_all_longest_words, takes a directory name and returns a dict in which the keys are filenames and the values are 
 the longest words from each file.
