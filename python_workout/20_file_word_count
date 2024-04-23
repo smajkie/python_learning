@@ -1,0 +1,39 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://learning.oreilly.com/library/view/python-workout/9781617295508/
+
+'''Exercise 20
+The challenge for this exercise is to write a wordcount function that mimics the wc Unix command. The function 
+will take a filename as input and will print four lines of output:
+
+Number of characters (including whitespace)
+Number of words (separated by whitespace)
+Number of lines
+Number of unique words (case sensitive, so “NO” is different from “no”)
+
+'''
+
+
+import os
+
+plik = os.path.dirname(__file__) + '\\files\\exc20.txt'
+#print('basename:    ', os.path.basename(__file__))
+#print('dirname:     ', os.path.dirname(__file__))
+
+def wc(file):
+    result = {"num_char": 0, "num_words": 0, "num_lines": 0, "num_unique": 0}
+    with open(file, 'r') as p:
+        pomocniczy_set = set()
+        for line in p:
+            result["num_lines"] += 1
+            result["num_words"] += len(line.split())
+            result["num_char"] += len(line)
+            for slowo in line.split():
+                pomocniczy_set.add(slowo)
+        result["num_unique"] = len(pomocniczy_set)
+    return result
+
+print(wc(plik))
+
+
