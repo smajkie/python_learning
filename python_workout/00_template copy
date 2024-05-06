@@ -11,23 +11,12 @@ both letters and digits.) You’ll thus call the function create_password _gener
 takes an integer argument. Calling this function will return a password of the specified length, using the string from which it was created
 
 '''
-import random
-
-def create_password_generator(characters):
-    def create_password(length):
-        output = []
-
-        for i in range(length):
-            output.append(random.choice(characters))
-        return ''.join(output)
-    return create_password
-
-haslo_alfanumeryczne = create_password_generator('abcdefgh')
-haslo_alfanumeryczne = create_password_generator('abcdefgh')
-haslo_symbolowe = create_password_generator('!@#$%^&*()-+')
-
-print(haslo_alfanumeryczne(5))
-print(haslo_symbolowe(8))
+words = 'this is a bunch of words'.split()
+def is_a_long_word(one_word):
+    return True if len(one_word) > 4 else False
+ 
+x = map(is_a_long_word, words)
+print(' '.join(x))  
 
 
 
