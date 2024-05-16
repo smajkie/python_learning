@@ -3,7 +3,7 @@
 
 #Source: https://learning.oreilly.com/library/view/python-workout/9781617295508/
 
-'''Exercise 27
+'''Exercise 30
 In this exercise, we’ll practice doing such unraveling. Write a function that takes a list of lists (just one element deep) and returns 
 a flat, one-dimensional version of the list. Thus, invoking
 
@@ -13,12 +13,10 @@ will return
 [1,2,3,4]
 
 '''
-words = 'this is a bunch of words'.split()
-def is_a_long_word(one_word):
-    return True if len(one_word) > 4 else False
- 
-x = map(is_a_long_word, words)
-print(' '.join(x))  
+lista = [[1,2],[3,4]]
+
+nowa_lista = [element for sublista in lista for element in sublista]
+print(nowa_lista)
 
 
 
