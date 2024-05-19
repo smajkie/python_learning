@@ -1,0 +1,35 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://learning.oreilly.com/library/view/python-workout/9781617295508/
+
+'''Exercise 27
+Change previous exc to object
+
+'''
+import random
+
+class user():
+
+    def __init__(self, zbior_znakow, dlugosc):
+        self.zbior_znakow = zbior_znakow
+        self.dlugosc = dlugosc
+
+    def create_password_generator(self):
+        def create_password():                          # mozna sie pozbyc tej funkcji tutaj bo nie ma potrzeby tego zagniezdzenia (a przynajmniej nie ma wartosci z tego jakiejs)
+            output = []
+
+            for i in range(self.dlugosc):
+                output.append(random.choice(self.zbior_znakow))
+            return ''.join(output)
+        return create_password
+
+uz1 = user('abcdefgh', 5)
+
+print(uz1.create_password_generator()())                # dziwne to... ale najwyrazniej trzeba wolac funkcje w metodzie
+
+
+
+
+
+

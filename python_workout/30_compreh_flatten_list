@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://learning.oreilly.com/library/view/python-workout/9781617295508/
+
+'''Exercise 30
+In this exercise, we’ll practice doing such unraveling. Write a function that takes a list of lists (just one element deep) and returns 
+a flat, one-dimensional version of the list. Thus, invoking
+
+flatten([[1,2], [3,4]])
+will return
+
+[1,2,3,4]
+
+'''
+lista = [[1,2],[3,4]]
+
+nowa_lista = [element for sublista in lista for element in sublista]
+print(nowa_lista)
+
+
+
+
+

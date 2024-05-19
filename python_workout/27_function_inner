@@ -1,0 +1,35 @@
+#!/usr/bin/env python3
+# Copyright SMAJKO
+
+#Source: https://learning.oreilly.com/library/view/python-workout/9781617295508/
+
+'''Exercise 27
+In this exercise, we’re going to create a password-generation function. Actually, we’re going to create a factory for password-generation functions. 
+That is, I might need to generate a large number of passwords, all of which use the same set of characters. (You know how it is. Some applications 
+require a mix of capital letters, lowercase letters, numbers, and symbols; whereas others require that you only use letters; and still others allow 
+both letters and digits.) You’ll thus call the function create_password _generator with a string. That string will return a function, which itself 
+takes an integer argument. Calling this function will return a password of the specified length, using the string from which it was created
+
+'''
+import random
+
+def create_password_generator(characters):
+    def create_password(length):
+        output = []
+
+        for i in range(length):
+            output.append(random.choice(characters))
+        return ''.join(output)
+    return create_password
+
+haslo_alfanumeryczne = create_password_generator('abcdefgh')
+haslo_alfanumeryczne = create_password_generator('abcdefgh')
+haslo_symbolowe = create_password_generator('!@#$%^&*()-+')
+
+print(haslo_alfanumeryczne(5))
+print(haslo_symbolowe(8))
+
+
+
+
+
