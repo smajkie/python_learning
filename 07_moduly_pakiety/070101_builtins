@@ -3,17 +3,19 @@
 
 #Source: https://intel.udemy.com/course/programowanie-w-jezyku-python/learn/lecture/15723394?start=0#overview
 
-import os
+#import os                                       # to spowoduje ze trzeba bedzie wolac os.metoda
+from os import walk, getcwd                      # a tu gdyby byl jakis konfliks nazw to mozemy je przemianowac
+from os import listdir as ld                     # a tu nie ma wogole os tylko reuse tych samych nazw
 #print(dir(os))
 
-for plik in os.listdir('sample_dir1'):
+for plik in ld('sample_dir1'):
     if plik.endswith('.jpg'):
         print('Obrazek to:', plik)
 #    
 print('#'*30)
 #
 #print(os.getcwd())                              #zobacz najpierw w jakim katalogu jest cmd
-for root, dirs, files in os.walk(os.getcwd()):
+for root, dirs, files in walk(getcwd()):
     print(root)
     print(dirs)
     print(files)
@@ -22,6 +24,6 @@ for root, dirs, files in os.walk(os.getcwd()):
 print('#'*30)
 #
 path = '.'
-lista = os.listdir(path)
+lista = ld(path)
 for item in lista:
     print(item)
