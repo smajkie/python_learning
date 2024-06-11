@@ -3,23 +3,8 @@
 
 #Source: https://learning.oreilly.com/library/view/python-workout/9781617295508/
 
-'''Exercise 22
-Challenge dla mnie - Jak znalezc w katalogu tylko pliki z okreslonym pattern np z danym rozszerzeniem?
-In this exercise, you’re analyzing test data in a high school. There’s a scores directory on the filesystem containing a number of files in JSON format. 
-Each file represents the scores for one class. Write a function, print_scores, that takes a directory name as an argument and prints a summary of 
-the student scores it finds.
-
-Your function should print the highest, lowest, and average test scores for each subject in each class. Given two files (9a.json and 9b.json) in the scores 
-directory, we would see the following output:
-
-scores/9a.json
-    science: min 75, max 97, average 86.4
-    literature: min 78, max 98, average 83.6
-    math: min 65, max 100, average 85.0
-scores/9b.json
-    science: min 35, max 95, average 82.0
-    literature: min 38, max 98, average 72.0
-    math: min 38, max 100, average 77.0
+'''Exercise 39
+This is a sample of composition, not inheritance
 '''
 
 
@@ -27,30 +12,37 @@ class Scoop():
     def __init__(self, flavor):
         self.flavor = flavor
 
-    def __str__(self):
-        return self.flavor
+    def __repr__(self):                 # method is used to define a string representation of an object, it can be also __str__
+        return self.flavor              # otherwise you will see sometibg like this when printing object: <__main__.Scoop object at 0x00000213B2BBD050>
 
-class Bowl():
+class Bowl():                           # obiekt miska reprezentuje lista galek i pare metod
     def __init__(self):
         self.scoops = []
 
-    def add_to_bowl(self, *new_scopes):
-        for new_scope in new_scopes:
-            self.scoops.append(new_scope)
+    def add_to_bowl(self, *new_scoopes):
+        for new_scoope in new_scoopes:
+            self.scoops.append(new_scoope)
 
     def print_scoops(self):
         for scoop in self.scoops:
             print(scoop)
+
+    def __repr__(self):                 # mozna jak wyzej przez metode print._scoops albo fajniej tak przez ten generator
+        return '\n'.join(scoop.flavor for scoop in self.scoops) # dla obiektu scoop w liscie tworzacej obekt bowl zwroc atrybut obiektu scoop czyli jego flavor
+        #return self.scoops
         
 
 lodzik = [Scoop(smak) for smak in ('Wanilia', 'Truskawka', 'Malina')]
 
 a1 = Scoop('Karmel')
 b1 = Scoop('Mango')
+c1 = Scoop('Vanilla')
 b = Bowl()
 #b.add_to_bowl(*lodzik)
 b.add_to_bowl(a1, b1)
 b.print_scoops()
+b.add_to_bowl(c1)
+print(b)
 
 
 
