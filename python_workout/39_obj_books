@@ -6,15 +6,23 @@
 '''Exercise 39
 This is a sample of composition, not inheritance
 '''
+from dataclasses import dataclass                               # trzeba zaimportowac aby dzialalo
 
-
-class Book():
+                                                    
+'''class Book():
     def __init__(self, title, author, price, book_width):
         self.title = title
         self.author = author
         self.price = price
         self.book_width = book_width
-
+'''
+@dataclass                                                  # od pythona 3.7 mozna skrocic ten zapis tak
+class Book():
+    title: str
+    author: str
+    price: int
+    book_width: int
+        
 class Shelf():
     def __init__(self, max_width):
         self.shelf = []
